@@ -14,7 +14,7 @@ const ButtonHome = ({ title, handleClick, state }: ButtonProps) => {
        ${state ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
       onClick={handleClick}
     >
-      <p className="text-[#b5b5af] select-none text-center font-[Metropolis-Regular] text-base">
+      <p className="text-[#b5b5af] select-none text-center font-[Mantinia-Regular] text-sm uppercase">
         {title}
       </p>
     </div>

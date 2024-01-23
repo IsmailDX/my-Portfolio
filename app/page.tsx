@@ -2,11 +2,13 @@
 import Image from "next/image";
 import dark from "@/public/images/darkModeSolo.png";
 import light from "@/public/images/lightModeSolo.png";
+import initalBack from "@/public/images/initialBack.png";
 import ButtonHome from "@/components/buttons/ButtonHome";
 import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import { changeColor } from "@/redux/features/colorMode/colorSlice";
 import { useState } from "react";
 import AnimatedContainer from "@/components/shared/AnimatedContainer";
+import { prefetch } from "remotion";
 
 export default function Home() {
   const colorMode = useAppSelector((state) => state.color.value);
@@ -35,9 +37,14 @@ export default function Home() {
       }, 5000);
     }
   };
-  console.log("check this ", disappear);
+
   return (
     <main className="w-full h-[100dvh] flex justify-center items-center relative">
+      <Image
+        src={initalBack}
+        alt="initalBack"
+        className="w-full h-full absolute bottom-0 object-cover -z-10"
+      />
       {change && (
         <AnimatedContainer
           initialClassName="opacity-100"
