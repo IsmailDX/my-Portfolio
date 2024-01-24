@@ -3,12 +3,12 @@ import Image from "next/image";
 import dark from "@/public/images/darkModeSolo.png";
 import light from "@/public/images/lightModeSolo.png";
 import initalBack from "@/public/images/initialBack.png";
-import ButtonHome from "@/components/buttons/ButtonHome";
 import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import { changeColor } from "@/redux/features/colorMode/colorSlice";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AnimatedContainer from "@/components/shared/AnimatedContainer";
-import { prefetch } from "remotion";
+import AllButtons from "@/components/buttons/AllButtons";
+import Loading from "@/components/shared/loading";
 
 export default function Home() {
   const colorMode = useAppSelector((state) => state.color.value);
@@ -17,6 +17,7 @@ export default function Home() {
   const [isDisabled, setIsDisabled] = useState(false);
   const [change, setChange] = useState(false);
   const [disappear, setDisappear] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const handleClickWithDelay = () => {
     if (!isDisabled) {
@@ -37,6 +38,21 @@ export default function Home() {
       }, 5000);
     }
   };
+
+  useEffect(() => {
+    // Simulate loading time
+    const loadingTimeout = setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+
+    // Cleanup the timeout on component unmount
+    return () => clearTimeout(loadingTimeout);
+  }, []);
+
+  // Show splash screen while loading
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <main className="w-full h-[100dvh] flex justify-center items-center relative">
@@ -100,23 +116,11 @@ export default function Home() {
         )}
       </div>
 
-      <div className="absolute top-[50%] sm:w-[340px] w-[70%] h-fit flex flex-col justify-center items-center space-y-3">
-        <ButtonHome title="Start the journey" />
-        {colorMode === "dark" ? (
-          <ButtonHome
-            title="Light mode"
-            handleClick={handleClickWithDelay}
-            state={isDisabled}
-          />
-        ) : (
-          <ButtonHome
-            title="Dark mode"
-            handleClick={handleClickWithDelay}
-            state={isDisabled}
-          />
-        )}
-        <ButtonHome title="عربي" />
-      </div>
+      <AllButtons
+        colorMode={colorMode}
+        handleClickWithDelay={handleClickWithDelay}
+        isDisabled={isDisabled}
+      />
     </main>
   );
 }
