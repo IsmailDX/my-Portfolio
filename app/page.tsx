@@ -113,7 +113,7 @@ export default function Home() {
       </div>
       {
         <div
-          className={`w-fit h-full absolute flex justify-center 
+          className={`w-full h-full absolute flex justify-center 
           ${
             colorMode !== "dark"
               ? disappear
