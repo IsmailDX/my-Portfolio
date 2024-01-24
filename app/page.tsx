@@ -49,13 +49,9 @@ export default function Home() {
     return () => clearTimeout(loadingTimeout);
   }, []);
 
-  // Show splash screen while loading
-  if (loading) {
-    return <Loading />;
-  }
-
   return (
     <main className="w-full h-[100dvh] flex justify-center items-center relative">
+      {loading && <Loading />}
       <Image
         src={initalBack}
         alt="initalBack"
