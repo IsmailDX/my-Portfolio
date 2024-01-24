@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import AnimatedContainer from "@/components/shared/AnimatedContainer";
 import AllButtons from "@/components/buttons/AllButtons";
 import Loading from "@/components/shared/Loading";
+import useSound from "use-sound";
 
 export default function Home() {
   const colorMode = useAppSelector((state) => state.color.value);
@@ -40,12 +41,10 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Simulate loading time
     const loadingTimeout = setTimeout(() => {
       setLoading(false);
     }, 5000);
 
-    // Cleanup the timeout on component unmount
     return () => clearTimeout(loadingTimeout);
   }, []);
 
@@ -68,6 +67,7 @@ export default function Home() {
             src="/videos/switchHome.mp4"
             autoPlay
             playsInline
+            muted
             className={`w-full h-full absolute top-0 left-0 object-center object-cover pointer-events-none`}
           />
         </AnimatedContainer>
