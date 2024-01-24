@@ -111,12 +111,27 @@ export default function Home() {
           />
         )}
       </div>
-
-      <AllButtons
-        colorMode={colorMode}
-        handleClickWithDelay={handleClickWithDelay}
-        isDisabled={isDisabled}
-      />
+      {
+        <div
+          className={`w-fit h-full absolute flex justify-center 
+          ${
+            colorMode !== "dark"
+              ? disappear
+                ? "opacity-0 duration-[5s]"
+                : `opacity-100 duration-[2s] ${
+                    colorMode !== "dark" ? "delay-[2000ms]" : "delay-0"
+                  }`
+              : ""
+          } 
+          }`}
+        >
+          <AllButtons
+            colorMode={colorMode}
+            handleClickWithDelay={handleClickWithDelay}
+            isDisabled={isDisabled}
+          />
+        </div>
+      }
     </main>
   );
 }
