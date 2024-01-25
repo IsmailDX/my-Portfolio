@@ -46,16 +46,21 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const totalImages = 3;
+    const totalImages = 2;
+    let loadingTimeout;
 
     const checkIfAllImagesLoaded = () => {
       if (loadedImages === totalImages) {
-        setLoading(false);
+        loadingTimeout = setTimeout(() => {
+          setLoading(false);
+        }, 5000);
       }
     };
 
-    const loadingTimeout = setTimeout(() => {
-      checkIfAllImagesLoaded();
+    checkIfAllImagesLoaded();
+
+    loadingTimeout = setTimeout(() => {
+      setLoading(false);
     }, 5000);
 
     return () => clearTimeout(loadingTimeout);
@@ -123,7 +128,6 @@ export default function Home() {
                 ? "opacity-0 duration-[5s]"
                 : "opacity-100 duration-[2s]"
             }`}
-            onLoad={handleImageLoad}
           />
         )}
       </div>
