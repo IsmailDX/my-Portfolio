@@ -19,6 +19,7 @@ export default function Home() {
   const [change, setChange] = useState(false);
   const [disappear, setDisappear] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [loadedImages, setLoadedImages] = useState(0);
 
   const handleClickWithDelay = () => {
     if (!isDisabled) {
@@ -40,13 +41,25 @@ export default function Home() {
     }
   };
 
+  const handleImageLoad = () => {
+    setLoadedImages((prev) => prev + 1);
+  };
+
   useEffect(() => {
+    const totalImages = 3;
+
+    const checkIfAllImagesLoaded = () => {
+      if (loadedImages === totalImages) {
+        setLoading(false);
+      }
+    };
+
     const loadingTimeout = setTimeout(() => {
-      setLoading(false);
+      checkIfAllImagesLoaded();
     }, 5000);
 
     return () => clearTimeout(loadingTimeout);
-  }, []);
+  }, [loadedImages]);
 
   return (
     <main className="w-full h-[100dvh] flex justify-center items-center relative">
@@ -55,6 +68,7 @@ export default function Home() {
         src={initalBack}
         alt="initalBack"
         className="w-full h-full absolute bottom-0 object-cover -z-10"
+        onLoad={handleImageLoad}
       />
       {change && (
         <AnimatedContainer
@@ -98,6 +112,7 @@ export default function Home() {
             src={dark}
             alt="darkSolo"
             className="w-fit h-full absolute bottom-0 object-cover"
+            onLoad={handleImageLoad}
           />
         ) : (
           <Image
@@ -108,6 +123,7 @@ export default function Home() {
                 ? "opacity-0 duration-[5s]"
                 : "opacity-100 duration-[2s]"
             }`}
+            onLoad={handleImageLoad}
           />
         )}
       </div>
