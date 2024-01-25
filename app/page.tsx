@@ -71,6 +71,8 @@ export default function Home() {
       {loading && <Loading />}
       <Image
         src={initalBack}
+        width={1920}
+        height={1080}
         alt="initalBack"
         className="w-full h-full absolute bottom-0 object-cover -z-10"
         onLoad={handleImageLoad}
