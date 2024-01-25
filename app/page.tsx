@@ -115,6 +115,8 @@ export default function Home() {
         {colorMode === "dark" ? (
           <Image
             src={dark}
+            width={644}
+            height={1039}
             alt="darkSolo"
             className="w-fit h-full absolute bottom-0 object-cover"
             onLoad={handleImageLoad}
@@ -122,6 +124,8 @@ export default function Home() {
         ) : (
           <Image
             src={light}
+            width={644}
+            height={1039}
             alt="lightSolo"
             className={`w-fit h-full absolute bottom-0 object-cover ${
               disappear
