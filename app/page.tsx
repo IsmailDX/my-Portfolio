@@ -76,7 +76,6 @@ export default function Home() {
         alt="initalBack"
         className="w-full h-full absolute bottom-0 object-cover -z-10"
         onLoad={handleImageLoad}
-        loading="eager"
       />
       {change && (
         <AnimatedContainer
