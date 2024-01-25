@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import useSound from "use-sound";
 
@@ -5,6 +6,7 @@ type ButtonProps = {
   title: string;
   handleClick?: () => void;
   state?: boolean;
+  language?: string;
 };
 
 const ButtonHome = ({ title, handleClick, state }: ButtonProps) => {

@@ -9,11 +9,12 @@ import { useEffect, useState } from "react";
 import AnimatedContainer from "@/components/shared/AnimatedContainer";
 import AllButtons from "@/components/buttons/AllButtons";
 import Loading from "@/components/shared/Loading";
-import useSound from "use-sound";
+import { changeLanguage } from "@/redux/features/language/languageSlice";
 
 export default function Home() {
   const colorMode = useAppSelector((state) => state.color.value);
   const dispatch = useAppDispatch();
+  const language = useAppSelector((state) => state.language.value);
 
   const [isDisabled, setIsDisabled] = useState(false);
   const [change, setChange] = useState(false);
@@ -65,6 +66,10 @@ export default function Home() {
 
     return () => clearTimeout(loadingTimeout);
   }, [loadedImages]);
+
+  const languageSwitch = () => {
+    dispatch(changeLanguage());
+  };
 
   return (
     <main className="w-full h-[100dvh] flex justify-center items-center relative">
@@ -135,6 +140,7 @@ export default function Home() {
                 ? "opacity-0 duration-[5s]"
                 : "opacity-100 duration-[2s]"
             }`}
+            loading="eager"
           />
         )}
       </div>
@@ -156,6 +162,8 @@ export default function Home() {
             colorMode={colorMode}
             handleClickWithDelay={handleClickWithDelay}
             isDisabled={isDisabled}
+            languageState={language}
+            languageFun={languageSwitch}
           />
         </div>
       }

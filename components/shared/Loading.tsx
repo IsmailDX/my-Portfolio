@@ -17,6 +17,7 @@ const Loading = () => {
           className="object-contain p-10 animate-pulse"
           width={280}
           height={280}
+          loading="eager"
         />
       </div>
     </AnimatedContainer>

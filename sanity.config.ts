@@ -1,5 +1,6 @@
 import { defineConfig } from "sanity";
-import { deskTool } from "sanity/desk";
+import { structureTool } from "sanity/structure";
+import schemas from "./sanity/schemas";
 
 const config = defineConfig({
   projectId: "swjv2bjr",
@@ -7,7 +8,8 @@ const config = defineConfig({
   title: "Portfolio",
   apiVersion: "2024-01-25",
   basePath: "/admin",
-  plugins: [deskTool()],
+  plugins: [structureTool()],
+  schema: { types: schemas },
 });
 
 export default config;
