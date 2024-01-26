@@ -28,6 +28,11 @@ const project = {
       ],
     },
     {
+      name: "video",
+      title: "Video",
+      type: "file",
+    },
+    {
       name: "url",
       title: "URL",
       type: "url",

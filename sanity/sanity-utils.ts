@@ -1,23 +1,31 @@
-import { Project } from "@/types/Project";
 import { createClient, groq } from "next-sanity";
+import clientConfig from "./config/client-config";
+import { myStoryPage } from "@/types/myStoryPage";
 
-export async function getProjects(): Promise<Project[]> {
-  const client = createClient({
-    projectId: "swjv2bjr",
-    dataset: "production",
-    apiVersion: "2024-01-25",
-    useCdn: true,
-  });
+// export async function getProjects(): Promise<Project[]> {
+//   return createClient(clientConfig).fetch(
+//     groq`*[_type == "project"]{
+//       _id,
+//       _createdAt,
+//       name,
+//       "slug": slug.current,
+//       "image": image.asset->url,
+//       url,
+//       content
+//     }`
+//   );
+// }
 
-  return client.fetch(
-    groq`*[_type == "project"]{
+export async function getmyStoryPage(): Promise<myStoryPage[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "myStoryPage"]{
       _id,
       _createdAt,
       name,
-      "slug": slug.current,
+      colorMode,
+      language,
       "image": image.asset->url,
-      url,
-      content
+      "video": video.asset->url,
     }`
   );
 }

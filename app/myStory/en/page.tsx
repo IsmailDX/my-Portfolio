@@ -1,25 +1,12 @@
 import React from "react";
-import { getProjects } from "@/sanity/sanity-utils";
-import Image from "next/image";
+import Index from "@/components/sections/index";
+import { getmyStoryPage } from "@/sanity/sanity-utils";
 
 const MyStory = async () => {
-  const projects = await getProjects();
+  const homeItems = await getmyStoryPage();
   return (
-    <div className="bg-red-400 w-full h-full">
-      {projects.map((project) => (
-        <div key={project._id}>
-          <div>{project.name} English</div>
-          {project.image && (
-            <Image
-              src={project.image}
-              alt={project.name}
-              width={750}
-              height={300}
-              className="object-cover rounded-lg border border-gray-500"
-            />
-          )}
-        </div>
-      ))}
+    <div className="w-full h-full">
+      <Index items={homeItems} />
     </div>
   );
 };

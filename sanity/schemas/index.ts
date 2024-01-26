@@ -1,5 +1,5 @@
-import project from "./project-schema";
+import myStoryPage from "./myStoryPage-schema";
 
-const schemas = [project];
+const schemas = [myStoryPage];
 
 export default schemas;
