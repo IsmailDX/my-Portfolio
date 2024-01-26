@@ -19,7 +19,7 @@ import { myStoryPage } from "@/types/myStoryPage";
 export async function getmyStoryPage(): Promise<myStoryPage[]> {
   return createClient(clientConfig).fetch(
     groq`*[_type == "myStoryPage"]{
-      _id,
+       _id,
       _createdAt,
       name,
       colorMode,

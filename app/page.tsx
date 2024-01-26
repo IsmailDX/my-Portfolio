@@ -8,7 +8,7 @@ import { changeColor } from "@/redux/features/colorMode/colorSlice";
 import { useEffect, useState } from "react";
 import AnimatedContainer from "@/components/shared/AnimatedContainer";
 import AllButtons from "@/components/buttons/AllButtons";
-import Loading from "@/components/shared/Loading";
+import Loading from "./loading";
 import { changeLanguage } from "@/redux/features/language/languageSlice";
 
 export default function Home() {

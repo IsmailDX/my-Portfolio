@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import AnimatedContainer from "./AnimatedContainer";
+import AnimatedContainer from "../components/shared/AnimatedContainer";
 
 const Loading = () => {
   return (

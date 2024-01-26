@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { StoreProvider } from "@/redux/StoreProvider";
+import Loading from "./loading";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Ismail | Portfolio",
@@ -15,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StoreProvider>{children}</StoreProvider>
+        <StoreProvider>
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+        </StoreProvider>
       </body>
     </html>
   );
