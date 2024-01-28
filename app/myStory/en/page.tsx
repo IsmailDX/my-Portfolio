@@ -14,7 +14,7 @@ const MyStory = async () => {
   const content = await getmyContent();
   const colorImage = await getmyColorImage();
   return (
-    <div className="w-full h-full overflow-hidden">
+    <div className="w-full h-[100dvh]">
       <title>Portfolio | My Story</title>
       <Suspense fallback={<Loading />}>
         <Index items={media} />
