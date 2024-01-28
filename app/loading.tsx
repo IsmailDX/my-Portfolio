@@ -10,7 +10,7 @@ const Loading = () => {
       whileInViewClassName="opacity-0"
       className={`w-full h-[100dvh] absolute z-30 select-none`}
     >
-      <div className="w-screen h-[100dvh] bg-black flex sm:justify-end sm:items-end justify-center items-center">
+      <div className="w-screen min-h-[100dvh] bg-black flex sm:justify-end sm:items-end justify-center items-center">
         <Image
           src="/images/loadingIcon.jpg"
           alt="loadingIcon"
