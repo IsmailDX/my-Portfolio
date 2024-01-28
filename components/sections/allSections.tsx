@@ -49,8 +49,8 @@ const AllSections = ({ items, content, colorImage }: Props) => {
     <section>
       <div
         className={`relative ${
-          loading === true ? "overflow-hidden h-screen" : "w-0 h-0 opacity-0"
-        }  `}
+          loading === true ? "overflow-hidden" : ""
+        } w-full h-[100dvh]`}
       >
         {loading && <Loading />}
 
