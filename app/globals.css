@@ -18,12 +18,33 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "ElMessiri-Regular";
+    src: url("/fonts/ElMessiri-Regular.ttf") format("opentype");
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;   
 }
 
-@layer base {
- 
+body {
+    font-family: "Metropolis-Regular";
 }
+
+.dark {
+    @apply text-white;
+}
+
+.light {
+    @apply text-[#222222];
+}
+
+.arabic {
+    @apply font-[ElMessiri-Regular];
+}
+ 
 

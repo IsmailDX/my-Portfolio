@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Image from "next/image";
 import { useAppSelector } from "@/redux/hooks";
 import { myStoryPage } from "@/types/myStoryPage";
@@ -12,13 +12,13 @@ const Index = ({ items }: Props) => {
   const colorMode = useAppSelector((state) => state.color.value);
 
   return (
-    <div className="w-full h-[75dvh] fixed">
+    <div className="w-full h-[75dvh] fixed bg-black">
       {items.map(
         (item) =>
           item.colorMode === colorMode && (
             <div
               key={item._id}
-              className={`w-full h-full overflow-hidden flex items-end ${
+              className={`w-full h-full flex items-end ${
                 colorMode === "dark" ? "justify-start" : "justify-center"
               }`}
             >
@@ -27,8 +27,9 @@ const Index = ({ items }: Props) => {
                 alt={item.name}
                 width={490}
                 height={490}
-                className="absolute xl:w-[35%]"
+                className="absolute h-[88%] w-fit object-center object-cover"
               />
+
               <video
                 src={item.video}
                 autoPlay

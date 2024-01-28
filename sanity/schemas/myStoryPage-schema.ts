@@ -28,6 +28,22 @@ const myStoryPage = {
       title: "Video",
       type: "file",
     },
+    {
+      name: "header",
+      title: "Header",
+      type: "string",
+    },
+    {
+      name: "content",
+      title: "Content",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+    {
+      name: "type",
+      title: "Type",
+      type: "string",
+    },
   ],
 };
 

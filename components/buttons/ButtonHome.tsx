@@ -1,6 +1,5 @@
-import Link from "next/link";
 import React from "react";
-import useSound from "use-sound";
+import { Howl } from "howler";
 
 type ButtonProps = {
   title: string;
@@ -10,8 +9,14 @@ type ButtonProps = {
 };
 
 const ButtonHome = ({ title, handleClick, state }: ButtonProps) => {
-  const [playSound] = useSound("/audio/buttonClick.mp3", { volume: 0.3 });
-  const [playSound2] = useSound("/audio/buttonHover.mp3", { volume: 0.3 });
+  var sound = new Howl({
+    src: ["/audio/buttonClick.mp3"],
+    volume: 0.3,
+  });
+  var soundHover = new Howl({
+    src: ["/audio/buttonHover.mp3"],
+    volume: 0.3,
+  });
 
   return (
     <div
@@ -20,9 +25,9 @@ const ButtonHome = ({ title, handleClick, state }: ButtonProps) => {
        ${state ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
       onClick={() => {
         handleClick && handleClick();
-        playSound();
+        sound.play();
       }}
-      onMouseEnter={playSound2}
+      onMouseEnter={() => soundHover.play()}
     >
       <p className="text-[#b5b5af] select-none text-center font-[Mantinia-Regular] text-sm uppercase">
         {title}

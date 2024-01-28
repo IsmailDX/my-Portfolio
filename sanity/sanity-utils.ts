@@ -16,16 +16,43 @@ import { myStoryPage } from "@/types/myStoryPage";
 //   );
 // }
 
-export async function getmyStoryPage(): Promise<myStoryPage[]> {
+export async function getmyMedia(): Promise<myStoryPage[]> {
   return createClient(clientConfig).fetch(
-    groq`*[_type == "myStoryPage"]{
-       _id,
-      _createdAt,
+    groq`*[_type == "myStoryPage" && type == "media"]{
+      _id,
+       _createdAt,
       name,
       colorMode,
       language,
       "image": image.asset->url,
       "video": video.asset->url,
+    }`
+  );
+}
+
+export async function getmyContent(): Promise<myStoryPage[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "myStoryPage" && type == "content"]{
+      _id,
+      _createdAt,
+      name,
+      language,
+      header,
+      content,
+      type,
+    }`
+  );
+}
+
+export async function getmyColorImage(): Promise<myStoryPage[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "myStoryPage" && type == "ColorImage"]{
+      _id,
+       _createdAt,
+      name,
+      colorMode,
+      "image": image.asset->url,
+      type,
     }`
   );
 }
