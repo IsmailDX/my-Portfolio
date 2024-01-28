@@ -12,7 +12,7 @@ const Index = ({ items }: Props) => {
   const colorMode = useAppSelector((state) => state.color.value);
 
   return (
-    <div className="w-full h-[75dvh] fixed bg-black">
+    <div className="w-full h-[75dvh] fixed bg-black overflow-hidden">
       {items.map(
         (item) =>
           item.colorMode === colorMode && (
