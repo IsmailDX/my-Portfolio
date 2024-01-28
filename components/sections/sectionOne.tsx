@@ -130,7 +130,7 @@ const SectionOne = ({ items, content, colorImage }: Props) => {
                           <div
                             className={`${
                               language === "en" ? "text-[16px]" : "text-[20px]"
-                            } text-white max-w-[520px] ${
+                            } max-w-[520px] ${
                               colorMode === "light"
                                 ? "text-black"
                                 : "text-white"
