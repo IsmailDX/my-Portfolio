@@ -15,10 +15,9 @@ type Props = {
 const SectionOne = ({ items, content, colorImage }: Props) => {
   const colorMode = useAppSelector((state) => state.color.value);
   const language = useAppSelector((state) => state.language.value);
-  console.log("HFFFFFFFFFF", colorImage);
 
   return (
-    <div className="w-full h-fit absolute top-[75%] left-0 bg-black">
+    <div className="w-full h-fit absolute top-[75%] left-0 bg-[#142020]">
       {items.map(
         (item) =>
           item.language === language && (
@@ -93,6 +92,7 @@ const SectionOne = ({ items, content, colorImage }: Props) => {
                               ? "opacity-0 w-[0px] h-0"
                               : "sm:opacity-100 sm:w-full sm:h-[500px] w-0 h-0"
                           }`}
+                          key={item._id}
                         >
                           <Image
                             src={item.image}
@@ -151,6 +151,7 @@ const SectionOne = ({ items, content, colorImage }: Props) => {
                               ? "opacity-100 sm:w-full sm:h-[500px] w-full h-[150px]"
                               : "sm:opacity-0 opacity-100 sm:w-[0px] sm:h-[0px] w-full h-[150px]"
                           }`}
+                          key={item._id}
                         >
                           <Image
                             src={item.image}
