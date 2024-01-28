@@ -5,7 +5,9 @@ import {
   getmyContent,
   getmyColorImage,
 } from "@/sanity/sanity-utils";
-import SectionOne from "@/components/sections/sectionOne";
+import AllSections from "@/components/sections/allSections";
+import Loading from "@/app/loading";
+import { Suspense } from "react";
 
 const MyStory = async () => {
   const media = await getmyMedia();
@@ -14,8 +16,10 @@ const MyStory = async () => {
   return (
     <div className="w-full h-full">
       <title>Portfolio | My Story</title>
-      <Index items={media} />
-      <SectionOne items={media} content={content} colorImage={colorImage} />
+      <Suspense fallback={<Loading />}>
+        <Index items={media} />
+        <AllSections items={media} content={content} colorImage={colorImage} />
+      </Suspense>
     </div>
   );
 };
