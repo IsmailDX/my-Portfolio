@@ -17,8 +17,12 @@ const MyStory = async () => {
     <div className="w-full h-full">
       <title>Portfolio | قصتي</title>
       <Suspense fallback={<Loading />}>
-        <Index items={media} />
-        <AllSections items={media} content={content} colorImage={colorImage} />
+        <AllSections
+          items={media}
+          content={content}
+          colorImage={colorImage}
+          media={media}
+        />
       </Suspense>
     </div>
   );
