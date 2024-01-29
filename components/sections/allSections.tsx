@@ -7,14 +7,16 @@ import darkBack from "@/public/images/darkBack.png";
 import { PortableText } from "@portabletext/react";
 import Loading from "@/app/loading";
 import SectionTwo from "./sectionTwo";
+import Index from "./index";
 
 type Props = {
   items: myStoryPage[];
   content: myStoryPage[];
   colorImage: myStoryPage[];
+  media: myStoryPage[];
 };
 
-const AllSections = ({ items, content, colorImage }: Props) => {
+const AllSections = ({ items, content, colorImage, media }: Props) => {
   const colorMode = useAppSelector((state) => state.color.value);
   const language = useAppSelector((state) => state.language.value);
   const [loading, setLoading] = useState(true);
@@ -53,6 +55,7 @@ const AllSections = ({ items, content, colorImage }: Props) => {
         } w-full h-[100dvh]`}
       >
         {loading && <Loading />}
+        <Index items={media} />
 
         <div className="w-full h-fit absolute top-[75%] left-0 bg-[#142020]">
           {items.map(
