@@ -75,6 +75,7 @@ const AllSections = ({ items, content, colorImage }: Props) => {
                         : "lg:w-[830px] md:w-[720px] sm:w-[600px] w-[500px] lg:-top-48 md:-top-44 sm:-top-36 -top-24"
                     }`}
                     onLoad={handleImageLoad}
+                    blurDataURL={item.blurURL}
                   />
                   <div
                     className="relative w-full h-full bg-cover bg-fixed bg-center bg-no-repeat bg-white"
@@ -141,6 +142,7 @@ const AllSections = ({ items, content, colorImage }: Props) => {
                                 width={500}
                                 height={500}
                                 className="w-full h-full object-cover"
+                                blurDataURL={item.blurURL}
                               />
                             </div>
                           )
@@ -205,6 +207,7 @@ const AllSections = ({ items, content, colorImage }: Props) => {
                                 width={1000}
                                 height={1000}
                                 className="w-full h-full object-cover"
+                                blurDataURL={item.blurURL}
                               />
                             </div>
                           )

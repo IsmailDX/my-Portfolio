@@ -25,6 +25,7 @@ export async function getmyMedia(): Promise<myStoryPage[]> {
       colorMode,
       language,
       "image": image.asset->url,
+      blurURL,
       "video": video.asset->url,
     }`
   );
@@ -52,6 +53,7 @@ export async function getmyColorImage(): Promise<myStoryPage[]> {
       name,
       colorMode,
       "image": image.asset->url,
+      blurURL,
       type,
     }`
   );

@@ -24,6 +24,11 @@ const myStoryPage = {
       type: "image",
     },
     {
+      name: "blurURL",
+      title: "BlurURL",
+      type: "string",
+    },
+    {
       name: "video",
       title: "Video",
       type: "file",

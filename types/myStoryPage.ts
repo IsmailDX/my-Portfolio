@@ -7,6 +7,7 @@ export type myStoryPage = {
   language: string;
   colorMode: string;
   image: string;
+  blurURL: string;
   video: string;
   header: string;
   content: PortableTextBlock[];
