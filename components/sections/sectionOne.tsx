@@ -2,7 +2,6 @@
 import React from "react";
 import { myStoryPage } from "@/types/myStoryPage";
 import Image from "next/image";
-
 import darkBack from "@/public/images/darkBack.png";
 import { PortableText } from "@portabletext/react";
 

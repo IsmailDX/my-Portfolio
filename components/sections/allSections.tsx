@@ -1,21 +1,20 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { myStoryPage } from "@/types/myStoryPage";
-import Image from "next/image";
 import { useAppSelector } from "@/redux/hooks";
-import darkBack from "@/public/images/darkBack.png";
-import { PortableText } from "@portabletext/react";
 import Loading from "@/app/loading";
 import SectionTwo from "./sectionTwo";
 import SectionOne from "./sectionOne";
+import { education } from "@/types/education";
 
 type Props = {
   items: myStoryPage[];
   content: myStoryPage[];
   colorImage: myStoryPage[];
+  education: education[];
 };
 
-const AllSections = ({ items, content, colorImage }: Props) => {
+const AllSections = ({ items, content, colorImage, education }: Props) => {
   const colorMode = useAppSelector((state) => state.color.value);
   const language = useAppSelector((state) => state.language.value);
   const [loading, setLoading] = useState(true);
@@ -64,7 +63,13 @@ const AllSections = ({ items, content, colorImage }: Props) => {
             colorMode={colorMode}
             handleImageLoad={handleImageLoad}
           />
-          <SectionTwo />
+          <SectionTwo
+            content={content}
+            colorImage={colorImage}
+            language={language}
+            colorMode={colorMode}
+            education={education}
+          />
         </div>
       </div>
     </section>
