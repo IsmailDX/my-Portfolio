@@ -7,73 +7,88 @@ import SectionTwo from './sectionTwo'
 import SectionOne from './sectionOne'
 import { education } from '@/types/education'
 import SectionThree from './sectionThree'
+import Link from 'next/link'
+import { IoIosArrowBack } from 'react-icons/io'
 
 type Props = {
-  items: myStoryPage[]
-  content: myStoryPage[]
-  colorImage: myStoryPage[]
-  education: education[]
+    items: myStoryPage[]
+    content: myStoryPage[]
+    colorImage: myStoryPage[]
+    education: education[]
 }
 
 const AllSections = ({ items, content, colorImage, education }: Props) => {
-  const colorMode = useAppSelector((state) => state.color.value)
-  const language = useAppSelector((state) => state.language.value)
-  const [loading, setLoading] = useState(true)
-  const [loadedImages, setLoadedImages] = useState(0)
+    const colorMode = useAppSelector((state) => state.color.value)
+    const language = useAppSelector((state) => state.language.value)
+    const [loading, setLoading] = useState(true)
+    const [loadedImages, setLoadedImages] = useState(0)
 
-  const handleImageLoad = () => {
-    setLoadedImages((prev) => prev + 1)
-  }
-
-  useEffect(() => {
-    const totalImages = 1
-    let loadingTimeout
-
-    const checkIfAllImagesLoaded = () => {
-      if (loadedImages === totalImages) {
-        loadingTimeout = setTimeout(() => {
-          setLoading(false)
-        }, 5000)
-      }
+    const handleImageLoad = () => {
+        setLoadedImages((prev) => prev + 1)
     }
 
-    checkIfAllImagesLoaded()
+    useEffect(() => {
+        const totalImages = 1
+        let loadingTimeout
 
-    loadingTimeout = setTimeout(() => {
-      setLoading(false)
-    }, 5000)
+        const checkIfAllImagesLoaded = () => {
+            if (loadedImages === totalImages) {
+                loadingTimeout = setTimeout(() => {
+                    setLoading(false)
+                }, 5000)
+            }
+        }
 
-    return () => clearTimeout(loadingTimeout)
-  }, [loadedImages])
+        checkIfAllImagesLoaded()
 
-  return (
-    <section>
-      <div
-        className={`relative ${
-          loading === true ? 'overflow-hidden' : ''
-        } w-full h-[100dvh]`}
-      >
-        {loading && <Loading />}
+        loadingTimeout = setTimeout(() => {
+            setLoading(false)
+        }, 5000)
 
-        <div className="w-full h-fit absolute top-[75%] left-0 bg-[#142020]">
-          <SectionOne
-            items={items}
-            content={content}
-            colorImage={colorImage}
-            language={language}
-            colorMode={colorMode}
-            handleImageLoad={handleImageLoad}
-          />
-          <SectionTwo
-            colorImage={colorImage}
-            language={language}
-            colorMode={colorMode}
-            education={education}
-          />
-          <SectionThree />
-        </div>
-      </div>
-    </section>
-  )
+        return () => clearTimeout(loadingTimeout)
+    }, [loadedImages])
+
+    return (
+        <section>
+            <div
+                className={`relative ${
+                    loading === true ? 'overflow-hidden' : ''
+                } w-full h-[100dvh]`}
+            >
+                <Link href="/">
+                    <div
+                        className="w-fit h-fit md:bg-transparent hover:md:bg-transparent bg-black/50 hover:bg-black/90
+                         text-white/85 hover:text-white/100 absolute top-5 left-5 py-4 pr-4 pl-2 flex justify-center 
+                         items-center cursor-pointer group rounded-3xl transition-all duration-200 ease-out"
+                    >
+                        <IoIosArrowBack className="w-7 h-7 group-hover:w-8 group-hover:h-7 transition-all duration-100" />
+                        <h1 className="font-bold group-hover:text-lg">
+                            Go Back
+                        </h1>
+                    </div>
+                </Link>
+
+                {loading && <Loading />}
+
+                <div className="w-full h-fit absolute top-[75%] left-0 bg-[#142020]">
+                    <SectionOne
+                        items={items}
+                        content={content}
+                        colorImage={colorImage}
+                        language={language}
+                        colorMode={colorMode}
+                        handleImageLoad={handleImageLoad}
+                    />
+                    <SectionTwo
+                        colorImage={colorImage}
+                        language={language}
+                        colorMode={colorMode}
+                        education={education}
+                    />
+                    <SectionThree />
+                </div>
+            </div>
+        </section>
+    )
 }
 export default AllSections
