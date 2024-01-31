@@ -87,7 +87,12 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
             colorMode={colorMode}
             education={education}
           />
-          <SectionThree />
+          <SectionThree
+            colorImage={colorImage}
+            language={language}
+            colorMode={colorMode}
+            content={content}
+          />
         </div>
       </div>
     </section>

@@ -10,7 +10,6 @@ type Props = {
 };
 
 const SectionTwo = ({ colorImage, language, colorMode, education }: Props) => {
-  console.log("testing", education);
   return (
     <section>
       <div className="relative w-full h-full overflow-hidden">

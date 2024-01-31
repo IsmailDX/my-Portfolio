@@ -36,9 +36,10 @@ export async function getmyContent(): Promise<myStoryPage[]> {
   return createClient(clientConfig).fetch(
     groq`*[_type == "myStoryPage" && type == "content"]{
       _id,
-      _createdAt,
+       _createdAt,
       name,
       language,
+      "image": image.asset->url,
       header,
       content,
       type,
@@ -50,7 +51,7 @@ export async function getmyColorImage(): Promise<myStoryPage[]> {
   return createClient(clientConfig).fetch(
     groq`*[_type == "myStoryPage" && type == "ColorImage"]{
       _id,
-      _createdAt,
+ 
       name,
       colorMode,
       "image": image.asset->url,
