@@ -4,13 +4,20 @@ import Image from "next/image";
 import { education } from "@/types/education";
 
 type Props = {
+  content: myStoryPage[];
   colorImage: myStoryPage[];
   language: string;
   colorMode: string;
   education: education[];
 };
 
-const SectionTwo = ({ colorImage, language, colorMode, education }: Props) => {
+const SectionTwo = ({
+  content,
+  colorImage,
+  language,
+  colorMode,
+  education,
+}: Props) => {
   console.log("testing", education);
   return (
     <section>
@@ -57,15 +64,12 @@ const SectionTwo = ({ colorImage, language, colorMode, education }: Props) => {
                       overflow-hidden border-[3px] border-white/20 hover:border-white/70 hover:scale-105 transition-all duration-300`}
                     key={item._id}
                   >
-                    <Image
-                      src={item.image}
-                      alt={item._id}
-                      width={500}
-                      height={500}
-                      className="w-full h-full object-cover object-center absolute inset-0 -z-10 blur-[2px]"
-                      blurDataURL={item.blurURL}
+                    <div
+                      className="absolute inset-0 bg-cover bg-center bg-no-repeat -z-10 blur-[2px]"
+                      style={{
+                        backgroundImage: `url(${item.image})`,
+                      }}
                     />
-
                     <div
                       className={`absolute inset-0 w-full h-full ${
                         colorMode === "dark" ? "bg-[#041414]/50" : "bg-black/30"
