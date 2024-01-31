@@ -6,6 +6,7 @@ import Loading from "@/app/loading";
 import SectionTwo from "./sectionTwo";
 import SectionOne from "./sectionOne";
 import { education } from "@/types/education";
+import SectionThree from "./sectionThree";
 
 type Props = {
   items: myStoryPage[];
@@ -64,12 +65,12 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
             handleImageLoad={handleImageLoad}
           />
           <SectionTwo
-            content={content}
             colorImage={colorImage}
             language={language}
             colorMode={colorMode}
             education={education}
           />
+          <SectionThree />
         </div>
       </div>
     </section>
