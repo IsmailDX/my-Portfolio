@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import card from "@/public/images/card.png";
 import Image from "next/image";
-import cardSmall from "@/public/images/cardSmall.png";
+import cardSmall from "@/public/images/cardsmall.png";
 import { myStoryPage } from "@/types/myStoryPage";
 
 type Props = {
