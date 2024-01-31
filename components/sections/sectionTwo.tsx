@@ -1,23 +1,15 @@
 import React from "react";
 import { myStoryPage } from "@/types/myStoryPage";
-import Image from "next/image";
 import { education } from "@/types/education";
 
 type Props = {
-  content: myStoryPage[];
   colorImage: myStoryPage[];
   language: string;
   colorMode: string;
   education: education[];
 };
 
-const SectionTwo = ({
-  content,
-  colorImage,
-  language,
-  colorMode,
-  education,
-}: Props) => {
+const SectionTwo = ({ colorImage, language, colorMode, education }: Props) => {
   console.log("testing", education);
   return (
     <section>
