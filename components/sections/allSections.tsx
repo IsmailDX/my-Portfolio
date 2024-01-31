@@ -1,55 +1,56 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import { myStoryPage } from "@/types/myStoryPage";
-import { useAppSelector } from "@/redux/hooks";
-import Loading from "@/app/loading";
-import SectionTwo from "./sectionTwo";
-import SectionOne from "./sectionOne";
-import { education } from "@/types/education";
+'use client'
+import React, { useEffect, useState } from 'react'
+import { myStoryPage } from '@/types/myStoryPage'
+import { useAppSelector } from '@/redux/hooks'
+import Loading from '@/app/loading'
+import SectionTwo from './sectionTwo'
+import SectionOne from './sectionOne'
+import { education } from '@/types/education'
+import SectionThree from './sectionThree'
 
 type Props = {
-  items: myStoryPage[];
-  content: myStoryPage[];
-  colorImage: myStoryPage[];
-  education: education[];
-};
+  items: myStoryPage[]
+  content: myStoryPage[]
+  colorImage: myStoryPage[]
+  education: education[]
+}
 
 const AllSections = ({ items, content, colorImage, education }: Props) => {
-  const colorMode = useAppSelector((state) => state.color.value);
-  const language = useAppSelector((state) => state.language.value);
-  const [loading, setLoading] = useState(true);
-  const [loadedImages, setLoadedImages] = useState(0);
+  const colorMode = useAppSelector((state) => state.color.value)
+  const language = useAppSelector((state) => state.language.value)
+  const [loading, setLoading] = useState(true)
+  const [loadedImages, setLoadedImages] = useState(0)
 
   const handleImageLoad = () => {
-    setLoadedImages((prev) => prev + 1);
-  };
+    setLoadedImages((prev) => prev + 1)
+  }
 
   useEffect(() => {
-    const totalImages = 1;
-    let loadingTimeout;
+    const totalImages = 1
+    let loadingTimeout
 
     const checkIfAllImagesLoaded = () => {
       if (loadedImages === totalImages) {
         loadingTimeout = setTimeout(() => {
-          setLoading(false);
-        }, 5000);
+          setLoading(false)
+        }, 5000)
       }
-    };
+    }
 
-    checkIfAllImagesLoaded();
+    checkIfAllImagesLoaded()
 
     loadingTimeout = setTimeout(() => {
-      setLoading(false);
-    }, 5000);
+      setLoading(false)
+    }, 5000)
 
-    return () => clearTimeout(loadingTimeout);
-  }, [loadedImages]);
+    return () => clearTimeout(loadingTimeout)
+  }, [loadedImages])
 
   return (
     <section>
       <div
         className={`relative ${
-          loading === true ? "overflow-hidden" : ""
+          loading === true ? 'overflow-hidden' : ''
         } w-full h-[100dvh]`}
       >
         {loading && <Loading />}
@@ -64,15 +65,15 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
             handleImageLoad={handleImageLoad}
           />
           <SectionTwo
-            content={content}
             colorImage={colorImage}
             language={language}
             colorMode={colorMode}
             education={education}
           />
+          <SectionThree />
         </div>
       </div>
     </section>
-  );
-};
-export default AllSections;
+  )
+}
+export default AllSections

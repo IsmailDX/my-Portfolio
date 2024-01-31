@@ -4,6 +4,7 @@ import { myStoryPage } from "@/types/myStoryPage";
 import Image from "next/image";
 import darkBack from "@/public/images/darkBack.png";
 import { PortableText } from "@portabletext/react";
+import border from "@/public/images/border.png";
 
 type Props = {
   items: myStoryPage[];
@@ -157,7 +158,7 @@ const SectionOne = ({
                     (item) =>
                       item.name === `section1BodyImage-${1}-${colorMode}` && (
                         <div
-                          className={`overflow-hidden ${
+                          className={`relative ${
                             language === "en"
                               ? "opacity-100 sm:w-full sm:h-[500px] w-full h-[150px]"
                               : "sm:opacity-0 opacity-100 sm:w-[0px] sm:h-[0px] w-full h-[150px]"
@@ -171,6 +172,21 @@ const SectionOne = ({
                             height={1000}
                             className="w-full h-full object-cover"
                             blurDataURL={item.blurURL}
+                          />
+                          <Image
+                            src={border}
+                            alt="border1"
+                            width={1000}
+                            height={1000}
+                            className="w-fit h-fit absolute lg:-top-3 -top-2"
+                          />
+
+                          <Image
+                            src={border}
+                            alt="border1"
+                            width={1000}
+                            height={1000}
+                            className="w-fit h-fit absolute lg:-bottom-3 -bottom-2  -right-[35%] bg"
                           />
                         </div>
                       )
