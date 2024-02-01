@@ -17,7 +17,7 @@ const MyStory = async () => {
   const education = await getmyEducation();
 
   return (
-    <div className="w-full h-[100dvh]">
+    <div className="w-full h-fit">
       <title>Portfolio | My Story</title>
       <Suspense fallback={<Loading />}>
         <Index items={media} />
