@@ -54,7 +54,7 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
       <div
         className={`relative ${
           loading === true ? "overflow-hidden" : ""
-        } w-full h-[100dvh]`}
+        } w-full h-full`}
       >
         <Link href="/">
           <div
@@ -75,8 +75,28 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
 
         <Index items={items} />
 
-        <div className="w-full h-fit absolute top-[75%] left-0 bg-[#0c283b]">
-          <div className="h-[70dvh] w-full" />
+        <div className="w-full h-fit absolute top-[75%] left-0">
+          <div className="w-full h-[70dvh] bg-transparent" />
+          <SectionOne
+            items={items}
+            content={content}
+            colorImage={colorImage}
+            language={language}
+            colorMode={colorMode}
+            handleImageLoad={handleImageLoad}
+          />
+          <SectionTwo
+            colorImage={colorImage}
+            language={language}
+            colorMode={colorMode}
+            education={education}
+          />
+          <SectionThree
+            colorImage={colorImage}
+            language={language}
+            colorMode={colorMode}
+            content={content}
+          />
         </div>
       </div>
     </section>
