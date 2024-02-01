@@ -15,7 +15,7 @@ const SectionThree = ({ colorImage, language, colorMode, content }: Props) => {
   console.log("testing1", colorImage);
   return (
     <section>
-      <div className="w-full md:h-[100dvh] sm:h-[75dvh] h-[150dvh] relative flex justify-center overflow-hidden">
+      <div className="w-full md:h-[100svh] sm:h-[75svh] h-[150svh] relative flex justify-center overflow-hidden">
         <Image
           src={leaf}
           alt="leaf"

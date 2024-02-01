@@ -37,8 +37,8 @@ const Index = ({ items }: Props) => {
   };
 
   return (
-    <section className="w-full h-[100dvh] fixed bg-black overflow-hidden">
-      <div className="w-full h-[75dvh] fixed">
+    <section className="w-full h-[100svh] fixed bg-black overflow-hidden">
+      <div className="w-full h-[75svh] fixed">
         {items.map(
           (item) =>
             item.colorMode === colorMode && (

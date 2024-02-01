@@ -54,13 +54,13 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
       <div
         className={`relative ${
           loading === true ? "overflow-hidden" : ""
-        } w-full h-[100dvh]`}
+        } w-full h-[100svh]`}
       >
         <Link href="/">
           <div
             className="w-fit h-fit md:bg-transparent hover:md:bg-transparent bg-black/50 hover:bg-black/90
                          text-white/85 hover:text-white/100 absolute top-5 left-5 py-4 pr-4 pl-2 flex justify-center 
-                         items-center cursor-pointer group rounded-3xl transition-all duration-200 ease-out"
+                         items-center cursor-pointer group rounded-3xl transition-all duration-200 ease-out z-20"
           >
             <IoIosArrowBack className="w-7 h-7 group-hover:w-8 group-hover:h-7 transition-all duration-100" />
             {language === "en" ? (
@@ -75,7 +75,7 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
 
         <Index items={items} />
 
-        <div className="w-full h-fit absolute top-[75%] left-0 bg-[#0c283b]">
+        <div className="w-full h-fit absolute top-[75%] left-0 bg-[#142020]">
           <SectionOne
             items={items}
             content={content}

@@ -16,7 +16,7 @@ const MyStory = async () => {
   const education = await getmyEducation();
 
   return (
-    <div className="w-full h-full fixed overflow-y-scroll">
+    <div className="w-full h-[100svh]">
       <title>Portfolio | My Story</title>
       <Suspense fallback={<Loading />}>
         <AllSections
