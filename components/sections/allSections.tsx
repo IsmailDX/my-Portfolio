@@ -75,28 +75,28 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
 
         <Index items={items} />
 
-        <div className="w-full h-fit bg-[#0c283b]">
-          <SectionOne
-            items={items}
-            content={content}
-            colorImage={colorImage}
-            language={language}
-            colorMode={colorMode}
-            handleImageLoad={handleImageLoad}
-          />
-          <SectionTwo
-            colorImage={colorImage}
-            language={language}
-            colorMode={colorMode}
-            education={education}
-          />
-          <SectionThree
-            colorImage={colorImage}
-            language={language}
-            colorMode={colorMode}
-            content={content}
-          />
-        </div>
+        <div className="w-full h-[70dvh] bg-transparent" />
+
+        <SectionOne
+          items={items}
+          content={content}
+          colorImage={colorImage}
+          language={language}
+          colorMode={colorMode}
+          handleImageLoad={handleImageLoad}
+        />
+        <SectionTwo
+          colorImage={colorImage}
+          language={language}
+          colorMode={colorMode}
+          education={education}
+        />
+        <SectionThree
+          colorImage={colorImage}
+          language={language}
+          colorMode={colorMode}
+          content={content}
+        />
       </div>
     </section>
   );
