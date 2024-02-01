@@ -54,7 +54,7 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
       <div
         className={`relative ${
           loading === true ? "overflow-hidden" : ""
-        } w-full h-[100lvh]`}
+        } w-full h-[100dvh]`}
       >
         <Link href="/">
           <div
