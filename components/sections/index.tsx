@@ -37,7 +37,7 @@ const Index = ({ items }: Props) => {
   };
 
   return (
-    <section className="w-full h-fit fixed bg-black overflow-hidden -z-10">
+    <section className="w-full h-[100dvh] fixed bg-black overflow-hidden">
       <div className="w-full h-[75dvh] fixed">
         {items.map(
           (item) =>

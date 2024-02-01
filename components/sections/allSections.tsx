@@ -75,8 +75,7 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
 
         <Index items={items} />
 
-        <div className="w-full h-fit">
-          <div className="w-full h-[75dvh]" />
+        <div className="w-full h-fit bg-[#0c283b]">
           <SectionOne
             items={items}
             content={content}
