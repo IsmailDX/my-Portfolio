@@ -54,50 +54,11 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
       <div
         className={`relative ${
           loading === true ? "overflow-hidden" : ""
-        } w-full h-full`}
+        } w-full h-[100dvh]`}
       >
-        <Link href="/">
-          <div
-            className="w-fit h-fit md:bg-transparent hover:md:bg-transparent bg-black/50 hover:bg-black/90
-                         text-white/85 hover:text-white/100 absolute top-5 left-5 py-4 pr-4 pl-2 flex justify-center 
-                         items-center cursor-pointer group rounded-3xl transition-all duration-200 ease-out"
-          >
-            <IoIosArrowBack className="w-7 h-7 group-hover:w-8 group-hover:h-7 transition-all duration-100" />
-            {language === "en" ? (
-              <h1 className="font-bold group-hover:text-lg">Go Back</h1>
-            ) : (
-              <h1 className="font-bold group-hover:text-lg arabic">ارجع</h1>
-            )}
-          </div>
-        </Link>
-
-        {loading && <Loading />}
-
         <Index items={items} />
 
-        <div className="w-full h-fit absolute top-[75%] left-0">
-          <div className="w-full h-[70dvh] bg-transparent" />
-          <SectionOne
-            items={items}
-            content={content}
-            colorImage={colorImage}
-            language={language}
-            colorMode={colorMode}
-            handleImageLoad={handleImageLoad}
-          />
-          <SectionTwo
-            colorImage={colorImage}
-            language={language}
-            colorMode={colorMode}
-            education={education}
-          />
-          <SectionThree
-            colorImage={colorImage}
-            language={language}
-            colorMode={colorMode}
-            content={content}
-          />
-        </div>
+        <div className="w-full h-[70dvh] absolute top-[75%] left-0 bg-[#0c283b]"></div>
       </div>
     </section>
   );
