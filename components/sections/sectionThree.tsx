@@ -38,7 +38,7 @@ const SectionThree = ({ colorImage, language, colorMode, content }: Props) => {
 
             <div
               className="absolute w-full h-full lg:px-[130px] md:px-[50px] sm:px-[20px] px-[20px] 
-        flex flex-col md:pt-36 pt-24 md:space-y-7 sm:space-y-3 space-y-5"
+              flex flex-col justify-center md:pt-36 pt-24 md:space-y-7 sm:space-y-3 space-y-5"
             >
               <h1
                 className={`w-full flex text-white ${
