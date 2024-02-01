@@ -23,6 +23,11 @@ const config: Config = {
       "2xl": "1536px",
       // => @media (min-width: 1536px) { ... }
     },
+    extend: {
+      backgroundImage: {
+        parallax: "url('/images/darkBack.png')",
+      },
+    },
   },
   plugins: [],
 };

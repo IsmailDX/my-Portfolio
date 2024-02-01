@@ -47,13 +47,7 @@ const SectionOne = ({
                 onLoad={handleImageLoad}
                 blurDataURL={item.blurURL}
               />
-              <div
-                className="relative w-full h-full bg-cover bg-fixed bg-center bg-no-repeat bg-white"
-                style={{
-                  backgroundImage:
-                    colorMode === "dark" ? `url(${darkBack.src})` : "none",
-                }}
-              >
+              <div className="relative w-full h-full bg-cover bg-fixed bg-center bg-no-repeat bg-white bg-parallax">
                 <div className="w-full h-fit absolute sm:top-44 top-24 flex flex-col justify-center items-center text-center">
                   {item.language === "ar" ? (
                     <>
