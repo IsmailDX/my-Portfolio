@@ -73,8 +73,6 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
 
         {loading && <Loading />}
 
-        <Index items={items} />
-
         <div className="w-full h-fit absolute top-[75%] left-0 bg-[#0c283b] z-20">
           <SectionOne
             items={items}
