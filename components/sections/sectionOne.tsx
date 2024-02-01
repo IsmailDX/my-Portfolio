@@ -48,7 +48,7 @@ const SectionOne = ({
                 blurDataURL={item.blurURL}
               />
               <div
-                className="relative w-full h-full bg-cover bg-center bg-no-repeat bg-white"
+                className="relative w-full h-full bg-cover bg-fixed bg-center bg-no-repeat bg-white bg-transparent"
                 style={{
                   backgroundImage:
                     colorMode === "dark" ? `url(${darkBack.src})` : "none",
