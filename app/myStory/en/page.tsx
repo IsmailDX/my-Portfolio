@@ -1,5 +1,5 @@
 import React from "react";
-import Index from "@/components/sections/index";
+
 import {
   getmyMedia,
   getmyContent,
@@ -17,10 +17,9 @@ const MyStory = async () => {
   const education = await getmyEducation();
 
   return (
-    <div className="w-full h-fit">
+    <div className="w-full h-full">
       <title>Portfolio | My Story</title>
       <Suspense fallback={<Loading />}>
-        <Index items={media} />
         <AllSections
           items={media}
           content={content}

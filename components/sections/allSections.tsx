@@ -9,6 +9,7 @@ import { education } from "@/types/education";
 import SectionThree from "./sectionThree";
 import Link from "next/link";
 import { IoIosArrowBack } from "react-icons/io";
+import Index from "@/components/sections/index";
 
 type Props = {
   items: myStoryPage[];
@@ -71,6 +72,8 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
         </Link>
 
         {loading && <Loading />}
+
+        <Index items={items} />
 
         <div className="w-full h-fit absolute top-[75%] left-0 bg-[#142020]">
           <SectionOne
