@@ -37,11 +37,11 @@ const SectionThree = ({ colorImage, language, colorMode, content }: Props) => {
             <div className="absolute w-full h-full bg-black/15" />
 
             <div
-              className="absolute w-full h-full lg:px-[130px] md:px-[50px] sm:px-[20px] px-[20px] 
-              flex flex-col justify-center md:pt-36 pt-24 md:space-y-7 sm:space-y-3 space-y-5"
+              className="absolute w-full h-full flex flex-col justify-center md:pt-36 pt-[13%] 
+              md:space-y-7 sm:space-y-3 space-y-5"
             >
               <h1
-                className={`w-full flex text-white ${
+                className={`w-full flex text-white pl-[10%] pb-[2%] ${
                   language === "en"
                     ? "sm:text-[30px] text-[25px] justify-start font-bold"
                     : "sm:text-[35px] text-[30px] justify-end arabic font-normal"
@@ -51,7 +51,7 @@ const SectionThree = ({ colorImage, language, colorMode, content }: Props) => {
               </h1>
               <div
                 className="w-full h-fit flex sm:flex-row sm:justify-evenly sm:items-end 
-              flex-col justify-center items-center md:space-y-0 space-y-7"
+              flex-col justify-center items-center md:space-y-0 space-y-7 lg:px-[15%] md:px-[50px] sm:px-[20px] px-[20px]"
               >
                 <SwiperComponent
                   title="FrontEnd development"
