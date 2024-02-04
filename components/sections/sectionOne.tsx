@@ -2,7 +2,6 @@
 import React from "react";
 import { myStoryPage } from "@/types/myStoryPage";
 import Image from "next/image";
-import darkBack from "@/public/images/darkBack.png";
 import { PortableText } from "@portabletext/react";
 import border from "@/public/images/border.png";
 
@@ -39,7 +38,7 @@ const SectionOne = ({
                 alt={item.name}
                 width={720}
                 height={720}
-                className={`absolute object-contain z-10 ${
+                className={`absolute object-contain z-10 select-none ${
                   language === "ar"
                     ? "md:w-[450px] sm:w-[400px] w-[300px] sm:-top-56 -top-36"
                     : "lg:w-[830px] md:w-[720px] sm:w-[600px] w-[500px] lg:-top-48 md:-top-44 sm:-top-36 -top-24"
@@ -105,7 +104,7 @@ const SectionOne = ({
                             alt={item.name}
                             width={500}
                             height={500}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover select-none"
                             blurDataURL={item.blurURL}
                           />
                         </div>
@@ -165,7 +164,7 @@ const SectionOne = ({
                             alt={item.name}
                             width={1000}
                             height={1000}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover select-none"
                             blurDataURL={item.blurURL}
                           />
                           <Image
@@ -173,7 +172,7 @@ const SectionOne = ({
                             alt="border1"
                             width={1000}
                             height={1000}
-                            className="w-fit h-fit absolute lg:-top-3 -top-2"
+                            className="w-fit h-fit absolute lg:-top-3 -top-2 select-none"
                           />
 
                           <Image
@@ -181,7 +180,7 @@ const SectionOne = ({
                             alt="border1"
                             width={1000}
                             height={1000}
-                            className="w-fit h-fit absolute lg:-bottom-3 -bottom-2  -right-[35%] bg"
+                            className="w-fit h-fit absolute lg:-bottom-3 -bottom-2  -right-[35%] select-none"
                           />
                         </div>
                       )

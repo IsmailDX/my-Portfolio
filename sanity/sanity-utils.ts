@@ -2,6 +2,7 @@ import { createClient, groq } from "next-sanity";
 import clientConfig from "./config/client-config";
 import { myStoryPage } from "@/types/myStoryPage";
 import { education } from "@/types/education";
+import { experience } from "@/types/experience";
 
 // export async function getProjects(): Promise<Project[]> {
 //   return createClient(clientConfig).fetch(
@@ -73,6 +74,23 @@ export async function getmyEducation(): Promise<education[]> {
       language,
       "image": image.asset->url,
       blurURL,
+    }`
+  );
+}
+
+export async function getmyExperience(): Promise<experience[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "experience"]{
+      _id,
+       
+      jobTitle,
+      company,
+      country,
+      employment_status,
+      employment_period,
+      responsibilities,
+      language,
+      order,
     }`
   );
 }

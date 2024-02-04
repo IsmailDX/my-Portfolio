@@ -53,8 +53,9 @@ const Index = ({ items }: Props) => {
                   alt={item.name}
                   width={490}
                   height={490}
-                  className="absolute h-[88%] w-fit object-center object-cover z-10"
+                  className="absolute h-[88%] w-fit object-center object-cover z-10 select-none"
                   blurDataURL={item.blurURL}
+                  priority={true}
                 />
 
                 <Image
@@ -64,7 +65,7 @@ const Index = ({ items }: Props) => {
                   height={490}
                   className={`${
                     videoLoaded === false ? "w-full" : "w-0 opacity-0"
-                  } h-full object-center object-cover pointer-events-none`}
+                  } h-full object-center object-cover pointer-events-none select-none`}
                   blurDataURL={blurImage}
                 />
 

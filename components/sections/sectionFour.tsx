@@ -4,19 +4,31 @@ import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, FreeMode } from "swiper/modules";
 import Image from "next/image";
+import border from "@/public/images/border.png";
+import List from "../list";
+import { experience } from "@/types/experience";
 
 type Props = {
   language: string;
   colorMode: string;
+  experience: experience[];
 };
 
-const SectionFour = ({ language, colorMode }: Props) => {
+const SectionFour = ({ language, colorMode, experience }: Props) => {
+  console.log("experience", experience);
   return (
     <section
       className={`${
         colorMode === "dark" ? "bg-parallax2" : "bg-white"
-      } w-full h-full bg-cover bg-no-repeat bg-fixed bg-center flex justify-center`}
+      } w-full h-full bg-cover bg-no-repeat bg-fixed bg-center flex justify-center overflow-visible relative`}
     >
+      <Image
+        src={border}
+        alt="border"
+        width={1500}
+        height={500}
+        className="absolute top-0 left-0 w-full h-fit object-contain z-10 -mt-[2%] select-none"
+      />
       <div className="w-full max-w-[2440px] lg:px-32 px-5 py-16 flex flex-col space-y-7">
         <h1
           className={`w-full flex ${
@@ -54,49 +66,32 @@ const SectionFour = ({ language, colorMode }: Props) => {
             }}
             className="w-full h-[500px]"
           >
-            <SwiperSlide className="md:pl-10">
-              <div className="w-full h-full flex flex-row sm:justify-end md:p-5 p-0 relative max-w-[500px] overflow-visible">
-                <Image
-                  src="/images/body1.png"
-                  alt="body"
-                  width={400}
-                  height={700}
-                  className="md:w-fit md:h-full md:opacity-100 h-0 w-0 opacity-0 object-contain absolute top-0 mr-[53%]"
-                />
+            {experience
+              .sort((a, b) => a.order - b.order)
+              .map((exp) => (
+                <>
+                  {language === exp.language && (
+                    <SwiperSlide className="md:pl-10 select-none" key={exp._id}>
+                      <div className="w-full h-full flex flex-row sm:justify-end md:p-5 p-0 relative max-w-[500px] overflow-visible">
+                        <Image
+                          src={`/images/body${exp.order + 1}.png`}
+                          alt="body"
+                          width={400}
+                          height={700}
+                          className="md:w-fit md:h-full md:opacity-100 h-0 w-0 opacity-0 object-contain absolute top-0 mr-[53%] select-none"
+                        />
 
-                <div className="md:w-[90%] w-full h-full rounded-[50px] bg-parallax3 bg-cover bg-no-repeat bg-fixed bg-center">
-                  <ul>
-                    <li></li>
-                  </ul>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="md:pl-10">
-              <div className="w-full h-full flex flex-row sm:justify-end md:p-5 p-0 relative max-w-[500px] overflow-visible">
-                <Image
-                  src="/images/body2.png"
-                  alt="body"
-                  width={400}
-                  height={700}
-                  className="md:w-fit md:h-full md:opacity-100 h-0 w-0 opacity-0 object-contain absolute top-0 mr-[53%]"
-                />
-
-                <div className="md:w-[90%] w-full h-full rounded-[50px] bg-parallax3 bg-cover bg-no-repeat bg-fixed bg-center"></div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="md:pl-10">
-              <div className="w-full h-full flex flex-row sm:justify-end md:p-5 p-0 relative max-w-[500px] overflow-visible">
-                <Image
-                  src="/images/body3.png"
-                  alt="body"
-                  width={400}
-                  height={700}
-                  className="md:w-fit md:h-full md:opacity-100 h-0 w-0 opacity-0 object-contain absolute top-0 mr-[53%]"
-                />
-
-                <div className="md:w-[90%] w-full h-full rounded-[50px] bg-parallax3 bg-cover bg-no-repeat bg-fixed bg-center"></div>
-              </div>
-            </SwiperSlide>
+                        <div
+                          className="md:w-[90%] w-full h-full rounded-[50px] bg-parallax3 bg-cover bg-no-repeat bg-fixed bg-center lg:pl-[20%]
+                       lg:px-0 px-[10%] pt-[7%] pr-2"
+                        >
+                          <List experience={exp} />
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  )}
+                </>
+              ))}
           </Swiper>
         </div>
       </div>

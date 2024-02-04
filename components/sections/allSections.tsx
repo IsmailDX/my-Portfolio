@@ -11,17 +11,23 @@ import Link from "next/link";
 import { IoIosArrowBack } from "react-icons/io";
 import Index from "@/components/sections/index";
 import SectionFour from "./sectionFour";
-import Image from "next/image";
-import border from "@/public/images/border.png";
+import { experience } from "@/types/experience";
 
 type Props = {
   items: myStoryPage[];
   content: myStoryPage[];
   colorImage: myStoryPage[];
   education: education[];
+  experience: experience[];
 };
 
-const AllSections = ({ items, content, colorImage, education }: Props) => {
+const AllSections = ({
+  items,
+  content,
+  colorImage,
+  education,
+  experience,
+}: Props) => {
   const colorMode = useAppSelector((state) => state.color.value);
   const language = useAppSelector((state) => state.language.value);
   const [loading, setLoading] = useState(true);
@@ -67,9 +73,13 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
           >
             <IoIosArrowBack className="w-7 h-7 group-hover:w-8 group-hover:h-7 transition-all duration-100" />
             {language === "en" ? (
-              <h1 className="font-bold group-hover:text-lg">Go Back</h1>
+              <h1 className="font-bold group-hover:text-lg select-none">
+                Go Back
+              </h1>
             ) : (
-              <h1 className="font-bold group-hover:text-lg arabic">ارجع</h1>
+              <h1 className="font-bold group-hover:text-lg arabic select-none">
+                ارجع
+              </h1>
             )}
           </div>
         </Link>
@@ -100,16 +110,12 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
               colorMode={colorMode}
               content={content}
             />
-            <Image
-              src={border}
-              alt="border"
-              width={1500}
-              height={500}
-              className="absolute lg:bottom-[670px] bottom-[55%] left-0 w-[1500px] h-fit 
-              object-contain z-10 lg:opacity-100 opacity-0"
-            />
 
-            <SectionFour language={language} colorMode={colorMode} />
+            <SectionFour
+              language={language}
+              colorMode={colorMode}
+              experience={experience}
+            />
           </div>
         </div>
       </div>

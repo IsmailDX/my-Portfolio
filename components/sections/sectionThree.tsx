@@ -20,7 +20,7 @@ const SectionThree = ({ colorImage, language, colorMode, content }: Props) => {
           alt="leaf"
           width={700}
           height={500}
-          className="absolute 2xl:pt-[5%] pt-10 object-center 2xl:w-[45%] md:w-[60%] w-[90%] h-fit object-contain z-10"
+          className="absolute 2xl:pt-[5%] pt-10 object-center 2xl:w-[45%] md:w-[60%] w-[90%] h-fit object-contain z-10 select-none"
         />
         {colorImage.map((item) => (
           <React.Fragment key={item._id}>
