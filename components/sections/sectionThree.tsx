@@ -14,7 +14,7 @@ type Props = {
 const SectionThree = ({ colorImage, language, colorMode, content }: Props) => {
   return (
     <section>
-      <div className="w-full md:h-[670px] sm:h-[75svh] h-[150svh] relative flex justify-center overflow-hidden">
+      <div className="w-full md:h-[100svh] sm:h-[75svh] h-[150svh] relative flex justify-center overflow-hidden">
         <Image
           src={leaf}
           alt="leaf"
