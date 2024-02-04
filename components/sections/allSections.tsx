@@ -10,6 +10,9 @@ import SectionThree from "./sectionThree";
 import Link from "next/link";
 import { IoIosArrowBack } from "react-icons/io";
 import Index from "@/components/sections/index";
+import SectionFour from "./sectionFour";
+import Image from "next/image";
+import border from "@/public/images/border.png";
 
 type Props = {
   items: myStoryPage[];
@@ -90,12 +93,24 @@ const AllSections = ({ items, content, colorImage, education }: Props) => {
             colorMode={colorMode}
             education={education}
           />
-          <SectionThree
-            colorImage={colorImage}
-            language={language}
-            colorMode={colorMode}
-            content={content}
-          />
+          <div className="w-full h-fit relative">
+            <SectionThree
+              colorImage={colorImage}
+              language={language}
+              colorMode={colorMode}
+              content={content}
+            />
+            <Image
+              src={border}
+              alt="border"
+              width={1500}
+              height={500}
+              className="absolute lg:bottom-[670px] bottom-[55%] left-0 w-[1500px] h-fit 
+              object-contain z-10 lg:opacity-100 opacity-0"
+            />
+
+            <SectionFour language={language} colorMode={colorMode} />
+          </div>
         </div>
       </div>
     </section>

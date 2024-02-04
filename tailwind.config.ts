@@ -26,6 +26,8 @@ const config: Config = {
     extend: {
       backgroundImage: {
         parallax: "url('/images/darkBack.png')",
+        parallax2: "url('/images/redBg.jpg')",
+        parallax3: "url('/images/tree.jpg')",
       },
     },
   },

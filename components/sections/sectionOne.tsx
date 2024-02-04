@@ -30,8 +30,8 @@ const SectionOne = ({
           item.language === language && (
             <div
               key={item._id}
-              className={`w-full h-full flex justify-center relative${
-                colorMode === "light" ? " bg-white" : ""
+              className={`w-full h-full flex justify-center relative bg-cover md:bg-fixed bg-center bg-no-repeat bg-white${
+                colorMode === "dark" ? " bg-parallax" : ""
               }`}
             >
               <Image
@@ -46,8 +46,9 @@ const SectionOne = ({
                 }`}
                 onLoad={handleImageLoad}
                 blurDataURL={item.blurURL}
+                priority
               />
-              <div className="relative w-full h-full bg-cover md:bg-fixed bg-center bg-no-repeat bg-white bg-parallax">
+              <div className="relative w-full h-full max-w-[2440px]">
                 <div className="w-full h-fit absolute sm:top-44 top-24 flex flex-col justify-center items-center text-center">
                   {item.language === "ar" ? (
                     <>

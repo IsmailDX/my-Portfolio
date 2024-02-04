@@ -12,7 +12,7 @@ type Props = {
 const SectionTwo = ({ colorImage, language, colorMode, education }: Props) => {
   return (
     <section>
-      <div className="relative w-full h-full overflow-hidden">
+      <div className="relative w-full h-full overflow-hidden flex justify-center">
         {colorImage.map((item) => (
           <React.Fragment key={item._id}>
             {item.name === `section2BackImage-1-${colorMode}` && (
@@ -30,8 +30,8 @@ const SectionTwo = ({ colorImage, language, colorMode, education }: Props) => {
         ))}
 
         <div
-          className="w-full h-full top-0 left-0 lg:px-[130px] md:px-[80px] sm:px-[40px] px-[20px] 
-        flex flex-col py-14 relative z-10 space-y-10"
+          className="w-full h-fit top-0 left-0 lg:px-[130px] md:px-[80px] sm:px-[40px] px-[20px] 
+        flex flex-col py-14 relative z-10 space-y-10 max-w-[2440px]"
         >
           <h1
             className={`w-full flex font-bold text-white ${

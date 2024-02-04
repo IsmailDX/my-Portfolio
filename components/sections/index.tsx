@@ -58,7 +58,7 @@ const Index = ({ items }: Props) => {
                 />
 
                 <Image
-                  src={image}
+                  src={image ? image : "/images/preload-index-dark.png"}
                   alt={item.name}
                   width={490}
                   height={490}

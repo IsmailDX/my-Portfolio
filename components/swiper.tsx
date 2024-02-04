@@ -34,7 +34,7 @@ const SwiperComponent = ({ title, language, keyword, content }: Props) => {
 
   return (
     <div className="flex flex-col items-center w-full">
-      <h1 className="w-fit text-center font-normal text-white pb-3 md:text-[20px] sm:text-[15px] text-[20px]">
+      <h1 className="w-fit text-center font-normal text-white pb-3 md:text-[20px] text-[15px]">
         {title}
       </h1>
       <Swiper
@@ -44,7 +44,7 @@ const SwiperComponent = ({ title, language, keyword, content }: Props) => {
         className="md:w-[190px] md:h-[297px] w-[190px] h-[207px]"
       >
         {content.map((item) => (
-          <React.Fragment>
+          <React.Fragment key={item._id}>
             {item.header === `${keyword}` && (
               <SwiperSlide
                 key={item._id}
