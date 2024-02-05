@@ -48,6 +48,11 @@ const education = {
       title: "Type",
       type: "string",
     },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+    },
   ],
 };
 

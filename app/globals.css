@@ -47,5 +47,17 @@ body {
     @apply font-[ElMessiri-Regular];
 }
 
+.mySwiper4 .swiper-slide {
+    opacity: 0.4;
+}
+  
+.mySwiper4 .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+.mySwiper4 .swiper-button-prev, .swiper-button-next {
+    --swiper-theme-color: #ffffff;
+}
+
  
 

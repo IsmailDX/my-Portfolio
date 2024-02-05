@@ -21,11 +21,11 @@ const AllButtons = ({
     <div className="absolute top-[50%] sm:w-[340px] w-[70%] h-fit flex flex-col justify-center items-center space-y-3">
       {languageState === "en" ? (
         <Link href="/myStory/en" className="w-full">
-          <ButtonHome title="Start the journey" />
+          <ButtonHome title="Start the journey" languageKey="en" />
         </Link>
       ) : (
         <Link href="/myStory/ar" className="w-full">
-          <ButtonHome title="ابدأ الرحلة" />
+          <ButtonHome title="ابدأ الرحلة" languageKey="ar" />
         </Link>
       )}
       {colorMode === "dark" ? (
@@ -42,9 +42,13 @@ const AllButtons = ({
         />
       )}
       {languageState === "en" ? (
-        <ButtonHome title="عربي" handleClick={languageFun} />
+        <ButtonHome title="عربي" handleClick={languageFun} languageKey="ar" />
       ) : (
-        <ButtonHome title="English" handleClick={languageFun} />
+        <ButtonHome
+          title="English"
+          handleClick={languageFun}
+          languageKey="en"
+        />
       )}
     </div>
   );

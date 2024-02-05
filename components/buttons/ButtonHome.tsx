@@ -5,10 +5,15 @@ type ButtonProps = {
   title: string;
   handleClick?: () => void;
   state?: boolean;
-  language?: string;
+  languageKey?: string;
 };
 
-const ButtonHome = ({ title, handleClick, state }: ButtonProps) => {
+const ButtonHome = ({
+  title,
+  handleClick,
+  state,
+  languageKey,
+}: ButtonProps) => {
   var sound = new Howl({
     src: ["/audio/buttonClick.mp3"],
     volume: 0.3,
@@ -29,7 +34,11 @@ const ButtonHome = ({ title, handleClick, state }: ButtonProps) => {
       }}
       onMouseEnter={() => soundHover.play()}
     >
-      <p className="text-[#b5b5af] select-none text-center font-[Mantinia-Regular] text-sm uppercase">
+      <p
+        className={`text-[#b5b5af] select-none text-center font-[Mantinia-Regular] text-sm uppercase ${
+          languageKey === "ar" ? "arabic text-[20px]" : ""
+        }`}
+      >
         {title}
       </p>
     </div>

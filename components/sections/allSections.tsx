@@ -12,6 +12,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import Index from "@/components/sections/index";
 import SectionFour from "./sectionFour";
 import { experience } from "@/types/experience";
+import SectionFive from "./sectionFive";
 
 type Props = {
   items: myStoryPage[];
@@ -103,20 +104,22 @@ const AllSections = ({
             colorMode={colorMode}
             education={education}
           />
-          <div className="w-full h-fit relative">
-            <SectionThree
-              colorImage={colorImage}
-              language={language}
-              colorMode={colorMode}
-              content={content}
-            />
-
-            <SectionFour
-              language={language}
-              colorMode={colorMode}
-              experience={experience}
-            />
-          </div>
+          <SectionThree
+            colorImage={colorImage}
+            language={language}
+            colorMode={colorMode}
+            content={content}
+          />
+          <SectionFour
+            language={language}
+            colorMode={colorMode}
+            experience={experience}
+          />
+          <SectionFive
+            language={language}
+            colorMode={colorMode}
+            education={education}
+          />
         </div>
       </div>
     </section>

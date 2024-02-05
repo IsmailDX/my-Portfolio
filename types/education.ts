@@ -10,4 +10,5 @@ export type education = {
   image: string;
   blurURL: string;
   type: string;
+  order: number;
 };

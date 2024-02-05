@@ -74,6 +74,8 @@ export async function getmyEducation(): Promise<education[]> {
       language,
       "image": image.asset->url,
       blurURL,
+      type,
+      order,
     }`
   );
 }
