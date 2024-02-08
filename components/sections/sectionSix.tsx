@@ -82,7 +82,7 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
                       blurDataURL={project.blurURL}
                     />
                   </div>
-                  <div className="w-full h-fit flex-col pt-[4%]">
+                  <div className="w-full h-fit flex-col pt-[4%] pb-[7svh]">
                     <h1
                       className={`${
                         colorMode === "dark" ? "text-white" : "text-black"
