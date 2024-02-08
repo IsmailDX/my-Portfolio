@@ -5,6 +5,7 @@ export type projects = {
   _createdAt: string;
   projectTitle: string;
   image: string;
+  blurURL: string;
   description: PortableTextBlock[];
   technologies: {
     tech: string;

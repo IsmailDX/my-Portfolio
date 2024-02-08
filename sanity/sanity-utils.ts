@@ -105,6 +105,7 @@ export async function getMyProjects(): Promise<projects[]> {
       _createdAt,
       projectTitle,
       "image": image.asset->url,
+      blurURL,
       description,
       technologies,
       webLink,

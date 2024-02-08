@@ -11,6 +11,7 @@ type Props = {
 };
 
 const SectionSix = ({ language, colorMode, projects }: Props) => {
+  console.log(projects);
   return (
     <section
       className={`${
@@ -78,6 +79,7 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
                       height={600}
                       alt="ProjectImage"
                       className="w-full h-full object-cover object-center rounded-2xl"
+                      blurDataURL={project.blurURL}
                     />
                   </div>
                   <div className="w-full h-fit flex-col pt-[4%] pb-[10%]">

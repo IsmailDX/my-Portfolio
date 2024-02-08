@@ -14,6 +14,11 @@ const projects = {
       type: "image",
     },
     {
+      name: "blurURL",
+      title: "BlurURL",
+      type: "string",
+    },
+    {
       name: "description",
       title: "Description",
       type: "array",
