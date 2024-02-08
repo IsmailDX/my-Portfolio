@@ -3,6 +3,7 @@ import clientConfig from "./config/client-config";
 import { myStoryPage } from "@/types/myStoryPage";
 import { education } from "@/types/education";
 import { experience } from "@/types/experience";
+import { projects } from "@/types/projects";
 
 // export async function getProjects(): Promise<Project[]> {
 //   return createClient(clientConfig).fetch(
@@ -93,6 +94,22 @@ export async function getmyExperience(): Promise<experience[]> {
       responsibilities,
       language,
       order,
+    }`
+  );
+}
+
+export async function getMyProjects(): Promise<projects[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "projects"]{
+      _id,
+      _createdAt,
+      projectTitle,
+      "image": image.asset->url,
+      description,
+      technologies,
+      webLink,
+      language,
+      order
     }`
   );
 }

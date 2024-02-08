@@ -15,7 +15,6 @@ type Props = {
 };
 
 const SectionFour = ({ language, colorMode, experience }: Props) => {
-  console.log("experience", experience);
   return (
     <section
       className={`${
@@ -82,10 +81,14 @@ const SectionFour = ({ language, colorMode, experience }: Props) => {
                         />
 
                         <div
-                          className="md:w-[90%] w-full h-full rounded-[50px] bg-parallax3 bg-cover bg-no-repeat bg-fixed bg-center lg:pl-[20%]
-                       lg:px-0 px-[10%] pt-[7%] pr-2"
+                          className={`md:w-[90%] w-full h-full rounded-[50px] bg-cover bg-no-repeat bg-fixed bg-center lg:pl-[20%]
+                       lg:px-0 px-[10%] pt-[7%] pr-2 ${
+                         colorMode === "light"
+                           ? "border border-black/10 bg-[#fafafa] shadow-lg"
+                           : "bg-parallax3"
+                       }`}
                         >
-                          <List experience={exp} />
+                          <List experience={exp} colorMode={colorMode} />
                         </div>
                       </div>
                     </SwiperSlide>

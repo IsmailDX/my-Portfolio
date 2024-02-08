@@ -5,6 +5,7 @@ import {
   getmyColorImage,
   getmyEducation,
   getmyExperience,
+  getMyProjects,
 } from "@/sanity/sanity-utils";
 import AllSections from "@/components/sections/allSections";
 import Loading from "@/app/loading";
@@ -16,6 +17,7 @@ const MyStory = async () => {
   const colorImage = await getmyColorImage();
   const education = await getmyEducation();
   const experience = await getmyExperience();
+  const projects = await getMyProjects();
 
   return (
     <div className="w-full h-[100svh]">
@@ -27,6 +29,7 @@ const MyStory = async () => {
           colorImage={colorImage}
           education={education}
           experience={experience}
+          projects={projects}
         />
       </Suspense>
     </div>

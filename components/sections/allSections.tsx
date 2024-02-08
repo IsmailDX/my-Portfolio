@@ -12,7 +12,9 @@ import { IoIosArrowBack } from "react-icons/io";
 import Index from "@/components/sections/index";
 import SectionFour from "./sectionFour";
 import { experience } from "@/types/experience";
+import { projects } from "@/types/projects";
 import SectionFive from "./sectionFive";
+import SectionSix from "./sectionSix";
 
 type Props = {
   items: myStoryPage[];
@@ -20,6 +22,7 @@ type Props = {
   colorImage: myStoryPage[];
   education: education[];
   experience: experience[];
+  projects: projects[];
 };
 
 const AllSections = ({
@@ -28,6 +31,7 @@ const AllSections = ({
   colorImage,
   education,
   experience,
+  projects,
 }: Props) => {
   const colorMode = useAppSelector((state) => state.color.value);
   const language = useAppSelector((state) => state.language.value);
@@ -119,6 +123,11 @@ const AllSections = ({
             language={language}
             colorMode={colorMode}
             education={education}
+          />
+          <SectionSix
+            language={language}
+            colorMode={colorMode}
+            projects={projects}
           />
         </div>
       </div>

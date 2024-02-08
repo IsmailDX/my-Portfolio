@@ -23,8 +23,6 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
     setThumbsSwiper(swiper);
   };
 
-  console.log(education);
-
   return (
     <section
       className={`${
@@ -79,10 +77,10 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
             >
               {education
                 .sort((a, b) => a.order - b.order)
-                .map((item) => (
-                  <React.Fragment key={item._id}>
+                .map((item, index) => (
+                  <>
                     {item.type === "certificate" && (
-                      <SwiperSlide className="w-full h-fit">
+                      <SwiperSlide className="w-full h-fit" key={index}>
                         <Image
                           src={item.image}
                           width={700}
@@ -92,7 +90,7 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
                         />
                       </SwiperSlide>
                     )}
-                  </React.Fragment>
+                  </>
                 ))}
               <div
                 className={`top-[45%] absolute z-50 button-next-slide right-0 duration-500 cursor-pointer select-none
@@ -132,10 +130,13 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
               className="mySwiper4 h-full w-full rounded-md"
               key="thumbsSwiper"
             >
-              {education.map((item) => (
-                <React.Fragment key={item._id}>
+              {education.map((item, index) => (
+                <>
                   {item.type === "certificate" && (
-                    <SwiperSlide className="w-full h-fit relative rounded-3xl">
+                    <SwiperSlide
+                      className="w-full h-fit relative rounded-3xl"
+                      key={index}
+                    >
                       <div
                         className="w-full h-full bg-black/70 absolute top-0 left-0 flex justify-center 
                       items-center text-center text-white sm:text-lg text-sm select-none sm:rounded-3xl rounded-lg"
@@ -151,7 +152,7 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
                       />
                     </SwiperSlide>
                   )}
-                </React.Fragment>
+                </>
               ))}
             </Swiper>
           </div>
