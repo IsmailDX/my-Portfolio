@@ -57,7 +57,7 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
             .map((project) => (
               <Link key={project._id} href={project.webLink} target="_blank">
                 <div
-                  className={`w-full h-full rounded-lg flex-col justify-center items-start relative overflow-hidden
+                  className={`w-full sm:h-full h-[67svh] rounded-lg flex-col justify-center items-start relative overflow-hidden
                   p-3 backdrop-filter backdrop-blur-sm ${
                     colorMode === "dark"
                       ? "bg-white/15"
@@ -82,7 +82,7 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
                       blurDataURL={project.blurURL}
                     />
                   </div>
-                  <div className="w-full h-fit flex-col pt-[4%] pb-[7svh]">
+                  <div className="w-full h-fit flex-col pt-[4%] pb-[10%]">
                     <h1
                       className={`${
                         colorMode === "dark" ? "text-white" : "text-black"
