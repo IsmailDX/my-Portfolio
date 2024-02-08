@@ -32,9 +32,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    require("tailwind-scrollbar")({ nocompatible: true }),
-    require("tailwindcss-3d")({ legacy: true }),
-  ],
+  plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 };
 export default config;
