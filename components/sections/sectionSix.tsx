@@ -55,16 +55,15 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
           {projects
             .sort((a, b) => a.order - b.order)
             .map((project) => (
-              <div
-                className={`w-full h-full rounded-lg flex-col justify-center items-start relative overflow-hidden
-           p-3 backdrop-filter backdrop-blur-sm ${
-             colorMode === "dark"
-               ? "bg-white/15"
-               : "border border-black/10 bg-white/90 shadow-lg"
-           } hover:scale-105 transition-all duration-200 ease-out cursor-pointer group`}
-                key={project._id}
-              >
-                <Link href={project.webLink} target="_blank">
+              <Link key={project._id} href={project.webLink} target="_blank">
+                <div
+                  className={`w-full h-full rounded-lg flex-col justify-center items-start relative overflow-hidden
+                  p-3 backdrop-filter backdrop-blur-sm ${
+                    colorMode === "dark"
+                      ? "bg-white/15"
+                      : "border border-black/10 bg-white/90 shadow-lg"
+                  } hover:scale-105 transition-all duration-200 ease-out cursor-pointer group`}
+                >
                   <div className="w-full h-fit relative">
                     <div
                       className="w-full h-full bg-black/60 absolute top-0 left-0 rounded-2xl flex justify-center items-center 
@@ -83,7 +82,7 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
                       blurDataURL={project.blurURL}
                     />
                   </div>
-                  <div className="w-full h-fit flex-col pt-[4%] pb-[10%]">
+                  <div className="w-full h-fit flex-col pt-[4%]">
                     <h1
                       className={`${
                         colorMode === "dark" ? "text-white" : "text-black"
@@ -100,7 +99,7 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
                     </div>
                     <div
                       className="w-full h-fit flex gap-2 absolute bottom-0 left-0 overflow-x-auto scrollbar-thin scrollbar-thumb-white/30
-                scrollbar-track-white/10 scrollbar-thumb-rounded-full pb-1 pl-3"
+                     scrollbar-track-white/10 scrollbar-thumb-rounded-full pb-1 pl-3"
                     >
                       {project.technologies.map((item) => (
                         <p
@@ -112,8 +111,8 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
                       ))}
                     </div>
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             ))}
         </div>
       </div>
