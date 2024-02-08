@@ -55,15 +55,16 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
           {projects
             .sort((a, b) => a.order - b.order)
             .map((project) => (
-              <Link key={project._id} href={project.webLink} target="_blank">
-                <div
-                  className={`w-full h-full rounded-lg flex-col justify-center items-start relative overflow-hidden
+              <div
+                className={`w-full h-full rounded-lg flex-col justify-center items-start relative overflow-hidden
            p-3 backdrop-filter backdrop-blur-sm ${
              colorMode === "dark"
                ? "bg-white/15"
                : "border border-black/10 bg-white/90 shadow-lg"
            } hover:scale-105 transition-all duration-200 ease-out cursor-pointer group`}
-                >
+                key={project._id}
+              >
+                <Link href={project.webLink} target="_blank">
                   <div className="w-full h-fit relative">
                     <div
                       className="w-full h-full bg-black/60 absolute top-0 left-0 rounded-2xl flex justify-center items-center 
@@ -111,8 +112,8 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
                       ))}
                     </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             ))}
         </div>
       </div>
