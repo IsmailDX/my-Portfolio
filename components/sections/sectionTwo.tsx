@@ -17,7 +17,7 @@ const SectionTwo = ({ colorImage, language, colorMode, education }: Props) => {
           <React.Fragment key={item._id}>
             {item.name === `section2BackImage-1-${colorMode}` && (
               <div
-                className="absolute w-full h-full bg-cover bg-fixed bg-center bg-no-repeat bg-white z-10"
+                className="absolute w-full h-full md:bg-cover md:bg-fixed bg-center bg-no-repeat bg-white z-10"
                 style={{
                   backgroundImage:
                     item.colorMode === colorMode
