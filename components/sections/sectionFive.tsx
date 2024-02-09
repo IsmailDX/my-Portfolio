@@ -27,7 +27,7 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
     <section
       className={`${
         colorMode === "dark" ? "bg-parallax4" : "bg-[#fafafa]"
-      } w-full h-full md:bg-cover md:bg-fixed bg-no-repeat bg-center flex justify-center overflow-hidden select-none`}
+      } w-full h-full bg-cover bg-no-repeat bg-fixed bg-center flex justify-center overflow-hidden select-none`}
     >
       <div className="w-full max-w-[2440px] h-[77svh] lg:px-32 px-5 flex justify-between relative">
         <h1

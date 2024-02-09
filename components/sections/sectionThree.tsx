@@ -26,7 +26,7 @@ const SectionThree = ({ colorImage, language, colorMode, content }: Props) => {
           <React.Fragment key={item._id}>
             {item.colorMode === `${colorMode}3` && (
               <div
-                className="absolute top-0 left-0 w-full h-full md:bg-cover md:bg-fixed bg-center bg-no-repeat"
+                className="absolute top-0 left-0 w-full h-full bg-cover bg-fixed bg-center bg-no-repeat"
                 style={{
                   backgroundImage: `url(${item.image})`,
                 }}
