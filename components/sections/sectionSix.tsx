@@ -16,7 +16,7 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
     <section
       className={`${
         colorMode === "dark" ? "bg-parallax2" : "bg-[#fafafa]"
-      } w-full h-full bg-cover bg-no-repeat bg-fixed bg-center flex justify-center overflow-hidden select-none`}
+      } w-full h-full bg-cover bg-no-repeat md:bg-fixed bg-center flex justify-center overflow-hidden select-none`}
     >
       <div
         className={`w-full max-w-[2440px] h-full flex flex-col md:py-[3%] py-[6%] lg:px-32 md:px-24 px-5 space-y-[1%] ${

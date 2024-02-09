@@ -19,7 +19,7 @@ const SectionFour = ({ language, colorMode, experience }: Props) => {
     <section
       className={`${
         colorMode === "dark" ? "bg-parallax2" : "bg-white"
-      } w-full h-full bg-cover bg-no-repeat bg-fixed bg-center flex justify-center overflow-visible relative`}
+      } w-full h-full bg-cover bg-no-repeat md:bg-fixed bg-center flex justify-center overflow-visible relative`}
     >
       <Image
         src={border}
