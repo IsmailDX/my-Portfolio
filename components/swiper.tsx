@@ -41,14 +41,14 @@ const SwiperComponent = ({ title, language, keyword, content }: Props) => {
         effect={"cards"}
         grabCursor={true}
         modules={[EffectCards]}
-        className="md:w-[190px] md:h-[297px] w-[190px] h-[207px]"
+        className="flex flex-col justify-center items-center md:w-[190px] md:h-[297px] w-[190px] h-[207px]"
       >
         {content.map((item) => (
           <React.Fragment key={item._id}>
             {item.header === `${keyword}` && (
               <SwiperSlide
                 key={item._id}
-                className="bg-center bg-no-repeat flex flex-col justify-center items-center w-full h-full text-white select-none"
+                className="bg-center bg-no-repeat w-full h-full text-white select-none"
                 style={{
                   backgroundImage: `url(${
                     windowSize >= 768 ? card.src : cardSmall.src
