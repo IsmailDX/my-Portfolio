@@ -63,6 +63,7 @@ const SwiperComponent = ({ title, language, keyword, content }: Props) => {
                       height={700}
                       alt="logo"
                       className="object-contain object-center w-fit h-full"
+                      loading="eager"
                     />
                   </div>
                   <h1 className="w-[125px] text-center">{item.name}</h1>

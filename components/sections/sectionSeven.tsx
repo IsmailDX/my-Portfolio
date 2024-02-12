@@ -1,5 +1,6 @@
 import React from "react";
 import formbg from "@/public/images/formback.jpg";
+import cloud from "@/public/images/cloud.jpg";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -54,7 +55,8 @@ const SectionSeven = ({ language, colorMode, emailSent }: Props) => {
       className="w-full h-fit bg-cover bg-no-repeat md:bg-right-bottom bg-center md:bg-fixed flex justify-center 
       overflow-hidden select-none bg-[#fafafa]"
       style={{
-        backgroundImage: colorMode === "dark" ? `url(${formbg.src})` : "",
+        backgroundImage:
+          colorMode === "dark" ? `url(${formbg.src})` : `url(${cloud.src})`,
       }}
     >
       <div
@@ -69,16 +71,22 @@ const SectionSeven = ({ language, colorMode, emailSent }: Props) => {
             <div>
               <label
                 htmlFor="firstName"
-                className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+                className={`block mb-2 text-md font-medium ${
+                  colorMode === "dark" ? "text-white" : "text-black"
+                } ${language === "en" ? "text-left" : "arabic text-right"}`}
               >
-                Your Name
+                {language === "en" ? "Your Name" : "اسمك"}
               </label>
               <Field
                 type="text"
                 id="firstName"
                 name="firstName"
-                className="borderStyles"
-                placeholder="What's your name?"
+                className={`borderStyles ${
+                  language === "en" ? "text-left" : "text-right arabic"
+                }`}
+                placeholder={
+                  language === "en" ? "What's your name?" : "اسمك اي يا باشا؟"
+                }
                 required
               />
               <div className="pt-2 text-red-500 text-xs">
@@ -87,17 +95,25 @@ const SectionSeven = ({ language, colorMode, emailSent }: Props) => {
             </div>
             <div>
               <label
-                htmlFor="email"
-                className="block mb-2 text-md font-medium text-gray-900 dark:text-white "
+                htmlFor="firstName"
+                className={`block mb-2 text-md font-medium ${
+                  colorMode === "dark" ? "text-white" : "text-black"
+                } ${language === "en" ? "text-left" : "arabic text-right"}`}
               >
-                Your Email
+                {language === "en" ? "Your Email" : "بريدك الالكتروني"}
               </label>
               <Field
                 type="email"
                 id="email"
                 name="email"
-                className="borderStyles"
-                placeholder="What's your email?"
+                className={`borderStyles ${
+                  language === "en" ? "text-left" : "text-right arabic"
+                }`}
+                placeholder={
+                  language === "en"
+                    ? "What's your email?"
+                    : "ما هو بريدك الإلكتروني؟"
+                }
                 required
               />
               <div className="pt-2 text-red-500 text-xs">
@@ -106,26 +122,38 @@ const SectionSeven = ({ language, colorMode, emailSent }: Props) => {
             </div>
             <div>
               <label
-                htmlFor="message"
-                className="block mb-2 text-md font-medium text-gray-900 dark:text-white"
+                htmlFor="firstName"
+                className={`block mb-2 text-md font-medium ${
+                  colorMode === "dark" ? "text-white" : "text-black"
+                } ${language === "en" ? "text-left" : "arabic text-right"}`}
               >
-                Your Message
+                {language === "en" ? "Your Message" : "رسالتك"}
               </label>
               <Field
                 as="textarea"
                 id="message"
                 name="message"
-                className="borderStyles resize-y h-28"
-                placeholder="What do you want to say?"
+                className={`borderStyles resize-y h-28 ${
+                  language === "en" ? "text-left" : "text-right arabic"
+                }`}
+                placeholder={
+                  language === "en"
+                    ? "What do you want to say?"
+                    : "ماذا تريد أن تقول؟"
+                }
               />
             </div>
             <button
               type="submit"
-              className="bg-transparent backdrop-blur-lg text-white border border-white rounded-lg py-2 px-4 hover:bg-white/10 hover:scale-105
+              className={`bg-transparent backdrop-blur-lg rounded-lg py-2 px-4 hover:bg-white/10 hover:scale-105
               hover:text-[#f9e686]/90 transition-all duration-200 ease-out active:bg-white/30 active:text-lg focus:outline-none focus:ring-2
-               focus:ring-[#f9e686] focus:ring-opacity-50"
+               focus:ring-[#f9e686] focus:ring-opacity-50 ${
+                 colorMode === "light"
+                   ? "text-black border border-black"
+                   : "text-white border border-white"
+               } ${language === "en" ? "" : "arabic"}`}
             >
-              Submit
+              {language === "en" ? "Submit" : "إرسال"}
             </button>
           </Form>
         </Formik>
