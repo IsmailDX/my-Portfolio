@@ -47,7 +47,7 @@ const SwiperComponent = ({ title, keyword, content }: Props) => {
             {item.header === `${keyword}` && (
               <SwiperSlide
                 key={item._id}
-                className="bg-center bg-no-repeat flex justify-center items-center w-fit h-fit text-white select-none"
+                className="bg-center bg-no-repeat flex justify-center items-center w-full h-full text-white select-none"
                 style={{
                   backgroundImage: `url(${
                     windowSize >= 768 ? card.src : cardSmall.src
@@ -62,6 +62,7 @@ const SwiperComponent = ({ title, keyword, content }: Props) => {
                       height={700}
                       alt="logo"
                       className="object-contain object-center w-fit h-full"
+                      loading="eager"
                     />
                   </div>
                   <h1 className="w-[125px] text-center">{item.name}</h1>
