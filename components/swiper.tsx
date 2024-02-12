@@ -48,7 +48,7 @@ const SwiperComponent = ({ title, language, keyword, content }: Props) => {
             {item.header === `${keyword}` && (
               <SwiperSlide
                 key={item._id}
-                className="bg-center bg-no-repeat flex justify-center items-center w-full h-full text-white select-none"
+                className="bg-center bg-no-repeat flex flex-col justify-center items-center w-full h-full text-white select-none"
                 style={{
                   backgroundImage: `url(${
                     windowSize >= 768 ? card.src : cardSmall.src
