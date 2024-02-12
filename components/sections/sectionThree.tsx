@@ -54,19 +54,16 @@ const SectionThree = ({ colorImage, language, colorMode, content }: Props) => {
               >
                 <SwiperComponent
                   title="FrontEnd development"
-                  language={language}
                   content={content}
                   keyword="frontend"
                 />
                 <SwiperComponent
                   title="Data Analysis/Science"
-                  language={language}
                   content={content}
                   keyword="Data"
                 />
                 <SwiperComponent
                   title="Other"
-                  language={language}
                   content={content}
                   keyword="Other"
                 />
