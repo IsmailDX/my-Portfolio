@@ -16,6 +16,7 @@ type Props = {
 
 const SwiperComponent = ({ title, keyword, content }: Props) => {
   const [windowSize, setWindowSize] = useState<number>(0);
+  const [forceRerender, setForceRerender] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,8 +27,13 @@ const SwiperComponent = ({ title, keyword, content }: Props) => {
 
     window.addEventListener("resize", handleResize);
 
+    const timeoutId = setTimeout(() => {
+      setForceRerender(true);
+    }, 100);
+
     return () => {
       window.removeEventListener("resize", handleResize);
+      clearTimeout(timeoutId);
     };
   }, []);
 
@@ -41,6 +47,7 @@ const SwiperComponent = ({ title, keyword, content }: Props) => {
         grabCursor={true}
         modules={[EffectCards]}
         className="md:w-[190px] md:h-[297px] w-[190px] h-[207px]"
+        key={forceRerender ? "rerender" : undefined}
       >
         {content.map((item) => (
           <React.Fragment key={item._id}>
