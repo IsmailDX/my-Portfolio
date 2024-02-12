@@ -11,7 +11,6 @@ type Props = {
 };
 
 const SectionSix = ({ language, colorMode, projects }: Props) => {
-  console.log(projects);
   return (
     <section
       className={`${

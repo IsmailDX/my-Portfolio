@@ -15,6 +15,11 @@ import { experience } from "@/types/experience";
 import { projects } from "@/types/projects";
 import SectionFive from "./sectionFive";
 import SectionSix from "./sectionSix";
+import SectionSeven from "./sectionSeven";
+import EmailScreen from "./emailScreen";
+import { useDispatch } from "react-redux";
+import { showEmailScreen } from "@/redux/features/email/emailSlice";
+import { Howl } from "howler";
 
 type Props = {
   items: myStoryPage[];
@@ -35,8 +40,10 @@ const AllSections = ({
 }: Props) => {
   const colorMode = useAppSelector((state) => state.color.value);
   const language = useAppSelector((state) => state.language.value);
+  const showEmail = useAppSelector((state) => state.email.value);
   const [loading, setLoading] = useState(true);
   const [loadedImages, setLoadedImages] = useState(0);
+  const dispatch = useDispatch();
 
   const handleImageLoad = () => {
     setLoadedImages((prev) => prev + 1);
@@ -63,8 +70,22 @@ const AllSections = ({
     return () => clearTimeout(loadingTimeout);
   }, [loadedImages]);
 
+  var sound = new Howl({
+    src: ["/audio/emailSent.mp3"],
+    volume: 0.2,
+  });
+
+  const handleEmailSent = () => {
+    sound.play();
+    dispatch(showEmailScreen());
+    setTimeout(() => {
+      dispatch(showEmailScreen());
+    }, 5000);
+  };
+
   return (
     <section>
+      <EmailScreen showEmail={showEmail} />
       <div
         className={`relative ${
           loading === true ? "overflow-hidden" : ""
@@ -128,6 +149,11 @@ const AllSections = ({
             language={language}
             colorMode={colorMode}
             projects={projects}
+          />
+          <SectionSeven
+            language={language}
+            colorMode={colorMode}
+            emailSent={handleEmailSent}
           />
         </div>
       </div>

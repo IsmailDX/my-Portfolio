@@ -59,5 +59,23 @@ body {
     --swiper-theme-color: #ffffff;
 }
 
+.borderStyles {
+    @apply border text-white text-sm rounded-lg w-full p-2.5 bg-transparent autofill:bg-yellow-200 backdrop-blur-lg
+    border-[#0c2c24] placeholder-gray-400 focus:outline-none focus:border-white/30 hover:border-[#f9e686]/50 transition-all duration-200 ease-in-out;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: white;
+    background-color: transparent;
+    transition: background-color 5000s ease-in-out 0s;
+}
  
 

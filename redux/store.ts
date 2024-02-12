@@ -1,49 +1,44 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import storage from './storage'
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import storage from "./storage";
 import {
-    persistStore,
-    persistReducer,
-    FLUSH,
-    REHYDRATE,
-    PAUSE,
-    PERSIST,
-    PURGE,
-    REGISTER,
-} from 'redux-persist'
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
 
-import colorModeReducer from './features/colorMode/colorSlice'
-import languageReducer from './features/language/languageSlice'
+import colorModeReducer from "./features/colorMode/colorSlice";
+import languageReducer from "./features/language/languageSlice";
+import emailReducer from "./features/email/emailSlice";
 
 const persistConfig = {
-    key: 'root',
-    storage,
-}
+  key: "root",
+  storage,
+};
 
 const rootReducer = combineReducers({
-    color: colorModeReducer,
-    language: languageReducer,
-})
+  color: colorModeReducer,
+  language: languageReducer,
+  email: emailReducer,
+});
 
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
-    reducer: persistedReducer,
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({
-            serializableCheck: {
-                ignoredActions: [
-                    FLUSH,
-                    REHYDRATE,
-                    PAUSE,
-                    PERSIST,
-                    PURGE,
-                    REGISTER,
-                ],
-            },
-        }),
-})
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+});
 
-export const persistor = persistStore(store)
-export default store
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export const persistor = persistStore(store);
+export default store;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
