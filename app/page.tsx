@@ -10,6 +10,7 @@ import AnimatedContainer from "@/components/shared/AnimatedContainer";
 import AllButtons from "@/components/buttons/AllButtons";
 import Loading from "./loading";
 import { changeLanguage } from "@/redux/features/language/languageSlice";
+import Head from "next/head";
 
 export default function Home() {
   const colorMode = useAppSelector((state) => state.color.value);
@@ -73,6 +74,20 @@ export default function Home() {
 
   return (
     <main className="w-full h-[100dvh] flex justify-center items-center relative">
+      <Head>
+        <title>Ismail's Portfolio</title>
+        <meta
+          name="description"
+          content="Checkout Ismail's amazing portfolio"
+          key="desc"
+        />
+        <meta property="og:title" content="Ismail's Portfolio" />
+        <meta
+          property="og:description"
+          content="Checkout Ismail's amazing portfolio"
+        />
+        <meta property="og:image" content="./favicon.ico" />
+      </Head>
       {loading && <Loading />}
       <Image
         src={initalBack}
