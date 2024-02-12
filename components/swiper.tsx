@@ -38,6 +38,7 @@ const SwiperComponent = ({ title, language, keyword, content }: Props) => {
         {title}
       </h1>
       <Swiper
+        key={title}
         effect={"cards"}
         grabCursor={true}
         modules={[EffectCards]}
