@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import card from "@/public/images/card.png";
 import Image from "next/image";
-import cardSmall from "@/public/images/cardsmall.png";
 import { myStoryPage } from "@/types/myStoryPage";
 
 type Props = {
@@ -15,28 +14,6 @@ type Props = {
 };
 
 const SwiperComponent = ({ title, keyword, content }: Props) => {
-  const [windowSize, setWindowSize] = useState<number>(0);
-  const [forceRerender, setForceRerender] = useState<boolean>(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize(window.innerWidth);
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    const timeoutId = setTimeout(() => {
-      setForceRerender(true);
-    }, 100);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      clearTimeout(timeoutId);
-    };
-  }, []);
-
   return (
     <div className="flex flex-col items-center w-full">
       <h1 className="w-fit text-center font-normal text-white pb-3 md:text-[20px] text-[15px]">
@@ -47,7 +24,6 @@ const SwiperComponent = ({ title, keyword, content }: Props) => {
         grabCursor={true}
         modules={[EffectCards]}
         className="md:w-[190px] md:h-[297px] w-[190px] h-[207px]"
-        key={forceRerender ? "rerender" : undefined}
       >
         {content.map((item) => (
           <React.Fragment key={item._id}>
@@ -55,11 +31,7 @@ const SwiperComponent = ({ title, keyword, content }: Props) => {
               <SwiperSlide
                 key={item._id}
                 className="bg-center bg-no-repeat flex justify-center items-center w-full h-full text-white select-none"
-                style={{
-                  backgroundImage: `url(${
-                    windowSize >= 768 ? card.src : cardSmall.src
-                  })`,
-                }}
+                style={{ backgroundImage: `url(${card.src})` }}
               >
                 <div className="w-full h-full flex flex-col justify-center items-center space-y-4">
                   <div className="max-h-[130px] w-24 overflow-hidden flex justify-center">
