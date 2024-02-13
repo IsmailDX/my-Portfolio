@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import leaf from "@/public/images/leaf.png";

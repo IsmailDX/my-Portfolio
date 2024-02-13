@@ -44,7 +44,7 @@ const SwiperComponent = ({ title, keyword, content }: Props) => {
         className="md:w-[190px] md:h-[297px] w-[190px] h-[207px]"
       >
         {content.map((item) => (
-          <React.Fragment key={item._id}>
+          <>
             {item.header === `${keyword}` && (
               <SwiperSlide
                 key={item._id}
@@ -70,7 +70,7 @@ const SwiperComponent = ({ title, keyword, content }: Props) => {
                 </div>
               </SwiperSlide>
             )}
-          </React.Fragment>
+          </>
         ))}
       </Swiper>
     </div>
