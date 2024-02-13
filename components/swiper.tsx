@@ -43,11 +43,11 @@ const SwiperComponent = ({ title, keyword, content }: Props) => {
         modules={[EffectCards]}
         className="md:w-[190px] md:h-[297px] w-[190px] h-[207px]"
       >
-        {content.map((item) => (
+        {content.map((item, index) => (
           <>
             {item.header === `${keyword}` && (
               <SwiperSlide
-                key={item._id}
+                key={index}
                 className="bg-center bg-no-repeat flex justify-center items-center w-full h-full text-white select-none"
                 style={{
                   backgroundImage: `url(${
