@@ -42,6 +42,8 @@ const SwiperComponent = ({ title, keyword, content }: Props) => {
         grabCursor={true}
         modules={[EffectCards]}
         className="md:w-[190px] md:h-[297px] w-[190px] h-[207px]"
+        observer={true}
+        observeParents={true}
       >
         {content.map((item, index) => (
           <>
