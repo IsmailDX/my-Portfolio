@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import card from "@/public/images/card.png";
 import Image from "next/image";
+import cardSmall from "@/public/images/cardsmall.png";
 import { myStoryPage } from "@/types/myStoryPage";
 
 type Props = {
@@ -14,6 +15,22 @@ type Props = {
 };
 
 const SwiperComponent = ({ title, keyword, content }: Props) => {
+  const [windowSize, setWindowSize] = useState<number>(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className="flex flex-col items-center w-full">
       <h1 className="w-fit text-center font-normal text-white pb-3 md:text-[20px] text-[15px]">
@@ -31,7 +48,11 @@ const SwiperComponent = ({ title, keyword, content }: Props) => {
               <SwiperSlide
                 key={item._id}
                 className="bg-center bg-no-repeat flex justify-center items-center w-full h-full text-white select-none"
-                style={{ backgroundImage: `url(${card.src})` }}
+                style={{
+                  backgroundImage: `url(${
+                    windowSize >= 768 ? card.src : cardSmall.src
+                  })`,
+                }}
               >
                 <div className="w-full h-full flex flex-col justify-center items-center space-y-4">
                   <div className="max-h-[130px] w-24 overflow-hidden flex justify-center">

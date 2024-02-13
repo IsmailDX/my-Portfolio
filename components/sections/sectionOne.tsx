@@ -198,7 +198,11 @@ const SectionOne = ({
                           initialClassName="opacity-0 -mr-48"
                           transitionClassName="transition-all duration-[600ms] delay-[400ms]"
                           whileInViewClassName="opacity-100 mr-0"
-                          className={`w-full h-fit`}
+                          className={`w-full h-fit ${
+                            language === "en"
+                              ? "opacity-100 sm:w-full sm:h-[500px] w-full h-[150px]"
+                              : "sm:opacity-0 opacity-100 sm:w-[0px] sm:h-[0px] w-full h-[150px]"
+                          }`}
                           once
                         >
                           <div
