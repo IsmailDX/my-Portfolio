@@ -7,6 +7,7 @@ import { Suspense } from "react";
 export const metadata: Metadata = {
   title: "Ismail | Portfolio",
   description: "A website about Ismail and his work",
+  icons: "/favicon.ico",
 };
 
 export default function RootLayout({

@@ -74,20 +74,6 @@ export default function Home() {
 
   return (
     <main className="w-full h-[100dvh] flex justify-center items-center relative">
-      <Head>
-        <title>Ismail's Portfolio</title>
-        <meta
-          name="description"
-          content="Checkout Ismail's amazing portfolio"
-          key="desc"
-        />
-        <meta property="og:title" content="Ismail's Portfolio" />
-        <meta
-          property="og:description"
-          content="Checkout Ismail's amazing portfolio"
-        />
-        <meta property="og:image" content="./favicon.ico" />
-      </Head>
       {loading && <Loading />}
       <Image
         src={initalBack}
