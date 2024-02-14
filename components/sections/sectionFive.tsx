@@ -9,6 +9,7 @@ import Image from "next/image";
 import { education } from "@/types/education";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
+import AnimatedContainer from "../shared/AnimatedContainer";
 
 type Props = {
   language: string;
@@ -30,26 +31,40 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
       } w-full h-fit bg-cover bg-no-repeat md:bg-fixed bg-center flex justify-center overflow-hidden select-none`}
     >
       <div className="w-full max-w-[2440px] h-[77svh] lg:px-32 px-5 flex justify-between relative">
-        <h1
-          className={`lg:w-full lg:h-fit lg:opacity-100 opacity-0 w-0 h-0 lg:absolute lg:top-0 lg:pt-[3%] lg:z-20 ${
-            colorMode === "dark" ? "text-white" : "text-black"
-          } sm:pl-0 pl-1 ${
-            language === "en"
-              ? "sm:text-[30px] text-[25px] justify-start font-bold"
-              : "sm:text-[35px] text-[30px] justify-end arabic font-normal"
-          }`}
+        <AnimatedContainer
+          initialClassName="opacity-0 -mx-36"
+          transitionClassName="transition-all duration-[400ms] ease-out"
+          whileInViewClassName="opacity-100 -mx-0"
+          className={`w-fit h-fit`}
+          once
         >
-          {language === "en" ? "Certificates" : "الشهادات"}
-        </h1>
-        <div>
+          <h1
+            className={`lg:w-full lg:h-fit lg:opacity-100 opacity-0 w-0 h-0 lg:absolute lg:top-0 lg:pt-[3%] lg:z-20 ${
+              colorMode === "dark" ? "text-white" : "text-black"
+            } sm:pl-0 pl-1 ${
+              language === "en"
+                ? "sm:text-[30px] text-[25px] justify-start font-bold"
+                : "sm:text-[35px] text-[30px] justify-end arabic font-normal"
+            }`}
+          >
+            {language === "en" ? "Certificates" : "الشهادات"}
+          </h1>
+        </AnimatedContainer>
+        <AnimatedContainer
+          initialClassName="opacity-0 -mx-96"
+          transitionClassName="transition-all duration-[900ms] delay-[300ms] ease-in-out"
+          whileInViewClassName="opacity-100 -mx-[110px]"
+          className={`w-fit h-fit`}
+          once
+        >
           <Image
             src="/images/malenia1.png"
             width={700}
             height={700}
             alt="malenia"
-            className="lg:w-[45%] lg:h-fit lg:opacity-100 w-0 h-0 opacity-0 absolute bottom-0 left-0 lg:-ml-[10%] ml-0 select-none z-10"
+            className="lg:w-[45%] lg:h-fit lg:opacity-100 w-0 h-0 opacity-0 absolute bottom-0 lg:-ml-[10%] ml-0 select-none z-10"
           />
-        </div>
+        </AnimatedContainer>
         <div className="overflow-hidden pt-[2%] w-fit h-full flex flex-col lg:items-end items-center justify-center gap-7">
           <h1
             className={`lg:w-0 lg:h-0 w-fit h-fit ${

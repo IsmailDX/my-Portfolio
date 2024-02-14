@@ -3,6 +3,7 @@ import Image from "next/image";
 import { projects } from "@/types/projects";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
+import AnimatedContainer from "../shared/AnimatedContainer";
 
 type Props = {
   language: string;
@@ -22,31 +23,46 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
           language === "en" ? "items-start" : "items-end"
         }`}
       >
-        <h1
-          className={`w-fit h-fit ${
-            colorMode === "dark" ? "text-white" : "text-black"
-          } ${
-            language === "en"
-              ? "sm:text-[30px] text-[25px] font-bold"
-              : "sm:text-[35px] text-[30px] arabic font-normal"
-          }`}
+        <AnimatedContainer
+          initialClassName="opacity-0 -mx-36"
+          transitionClassName="transition-all duration-[400ms] ease-out"
+          whileInViewClassName="opacity-100 -mx-0"
+          className={`w-full h-fit`}
+          once
         >
-          {language === "en" ? "Projects" : "مشاريع"}
-        </h1>
-        <p
-          className={`${
-            colorMode === "dark" ? "text-white" : "text-black"
-          } text-[15px] lg:w-[40%] md:w-[60%] w-full ${
-            language === "en"
-              ? "text-[15px] font-bold"
-              : "text-[15px] arabic font-normal text-right"
-          }`}
+          <h1
+            className={`w-fit h-fit ${
+              colorMode === "dark" ? "text-white" : "text-black"
+            } ${
+              language === "en"
+                ? "sm:text-[30px] text-[25px] font-bold"
+                : "sm:text-[35px] text-[30px] arabic font-normal"
+            }`}
+          >
+            {language === "en" ? "Projects" : "مشاريع"}
+          </h1>
+        </AnimatedContainer>
+        <AnimatedContainer
+          initialClassName="opacity-0 -mx-36"
+          transitionClassName="transition-all duration-[400ms] delay-[200ms] ease-out"
+          whileInViewClassName="opacity-100 -mx-0"
+          className={`w-full h-fit`}
+          once
         >
-          {language === "en"
-            ? "Following projects showcases my skills and experience through real-world examples of my work. Each project is briefly described with links to the code respository and the live version of the project."
-            : "تعرض المشاريع التالية مهاراتي وخبرتي من خلال أمثلة عملية من عملي. يتم وصف كل مشروع بإيجاز مع روابط إلى مستودع الكود والنسخة الحية من المشروع"}
-        </p>
-
+          <p
+            className={`${
+              colorMode === "dark" ? "text-white" : "text-black"
+            } text-[15px] lg:w-[40%] md:w-[60%] w-full ${
+              language === "en"
+                ? "text-[15px] font-bold"
+                : "text-[15px] arabic font-normal text-right"
+            }`}
+          >
+            {language === "en"
+              ? "Following projects showcases my skills and experience through real-world examples of my work. Each project is briefly described with links to the code respository and the live version of the project."
+              : "تعرض المشاريع التالية مهاراتي وخبرتي من خلال أمثلة عملية من عملي. يتم وصف كل مشروع بإيجاز مع روابط إلى مستودع الكود والنسخة الحية من المشروع"}
+          </p>
+        </AnimatedContainer>
         <div
           className="w-full h-full grid grid-flow-col lg:grid-rows-2 lg:grid-cols-3 
         md:grid-cols-2 md:grid-rows-3 grid-rows-6 grid-cols-1 gap-5 pt-5"
@@ -55,13 +71,17 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
             .sort((a, b) => a.order - b.order)
             .map((project) => (
               <Link key={project._id} href={project.webLink} target="_blank">
-                <div
+                <AnimatedContainer
+                  initialClassName="opacity-0 -mx-36"
+                  transitionClassName="transition-all duration-[400ms] ease-in-out"
+                  whileInViewClassName="opacity-100 -mx-0"
                   className={`w-full sm:h-full h-[67svh] rounded-lg flex-col justify-center items-start relative overflow-hidden
                   p-3 backdrop-filter backdrop-blur-sm ${
                     colorMode === "dark"
                       ? "bg-white/15"
                       : "border border-black/10 bg-white/90 shadow-lg"
                   } hover:scale-105 transition-all duration-200 ease-out cursor-pointer group`}
+                  once
                 >
                   <div className="w-full h-fit relative">
                     <div
@@ -110,7 +130,7 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
                       ))}
                     </div>
                   </div>
-                </div>
+                </AnimatedContainer>
               </Link>
             ))}
         </div>

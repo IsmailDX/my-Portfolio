@@ -48,7 +48,7 @@ const SectionThree = ({ colorImage, language, colorMode, content }: Props) => {
                 once
               >
                 <h1
-                  className={`w-full flex text-white pb-[2%] sm:pt-0 pt-[15%] ${
+                  className={`w-full flex text-white sm:pt-0 pt-[15%] ${
                     language === "en"
                       ? "sm:text-[30px] text-[25px] justify-start font-bold"
                       : "sm:text-[35px] text-[30px] justify-end arabic font-normal"
@@ -59,11 +59,11 @@ const SectionThree = ({ colorImage, language, colorMode, content }: Props) => {
               </AnimatedContainer>
               <div
                 className="w-full sm:h-full h-full sm:max-h-[400px] flex sm:flex-row sm:justify-evenly lg:items-start 
-              flex-col justify-evenly items-center md:space-y-0 lg:px-[12%] md:px-[0px] sm:px-[0px] px-[20px] md:pb-10 overflow-hidden"
+              flex-col justify-evenly items-center md:space-y-0 lg:px-[12%] md:px-[0px] sm:px-[0px] px-[20px] md:pb-10"
               >
                 <AnimatedContainer
                   initialClassName="opacity-0 sm:my-36 mx-10"
-                  transitionClassName="transition-all duration-[600ms] delay-[300ms] ease-out"
+                  transitionClassName="transition-all duration-[600ms] sm:delay-[300ms] ease-out"
                   whileInViewClassName="opacity-100 sm:my-0 mx-0"
                   className={`w-full h-fit`}
                   once
@@ -76,7 +76,7 @@ const SectionThree = ({ colorImage, language, colorMode, content }: Props) => {
                 </AnimatedContainer>
                 <AnimatedContainer
                   initialClassName="opacity-0 sm:my-36 mx-10"
-                  transitionClassName="transition-all duration-[600ms] delay-[500ms] ease-in-out"
+                  transitionClassName="transition-all duration-[600ms] sm:delay-[500ms] ease-in-out"
                   whileInViewClassName="opacity-100 sm:my-0 mx-0"
                   className={`w-full h-fit`}
                   once
@@ -89,7 +89,7 @@ const SectionThree = ({ colorImage, language, colorMode, content }: Props) => {
                 </AnimatedContainer>
                 <AnimatedContainer
                   initialClassName="opacity-0 sm:my-36 mx-10"
-                  transitionClassName="transition-all duration-[600ms] delay-[700ms] ease-in-out"
+                  transitionClassName="transition-all duration-[600ms] sm:delay-[700ms] ease-in-out"
                   whileInViewClassName="opacity-100 sm:my-0 mx-0"
                   className={`w-full h-fit`}
                   once

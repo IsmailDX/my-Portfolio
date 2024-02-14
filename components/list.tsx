@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { experience } from "@/types/experience";
 import { PortableText } from "@portabletext/react";
+import AnimatedContainer from "./shared/AnimatedContainer";
 
 type Props = {
   experience: experience;
@@ -16,20 +17,28 @@ const List = ({ experience, colorMode }: Props) => {
           experience.language === "en" ? "" : "arabic text-right pr-5"
         }`}
       >
-        <li
-          className={`${
-            colorMode === "dark" ? "text-white" : "text-black"
-          } sm:text-[25px] text-[20px] font-bold flex justify-between items-center`}
+        <AnimatedContainer
+          initialClassName="opacity-0 -ml-20"
+          transitionClassName="transition-all duration-[600ms] delay-[220ms] ease-in-out"
+          whileInViewClassName="opacity-100 -ml-0"
+          className={`w-full h-fit overflow-hidden`}
+          once
         >
-          <span>{experience.jobTitle}</span>
-          <Image
-            src={`/images/${experience.country}.png`}
-            width={600}
-            height={500}
-            alt="flag"
-            className="sm:w-[40px] w-[30px] h-fit mr-5"
-          />
-        </li>
+          <li
+            className={`${
+              colorMode === "dark" ? "text-white" : "text-black"
+            } sm:text-[25px] text-[20px] font-bold flex justify-between items-center`}
+          >
+            <span>{experience.jobTitle}</span>
+            <Image
+              src={`/images/${experience.country}.png`}
+              width={600}
+              height={500}
+              alt="flag"
+              className="sm:w-[40px] w-[30px] h-fit mr-5"
+            />
+          </li>
+        </AnimatedContainer>
         <li
           className={`${
             colorMode === "dark" ? "text-white" : "text-black"
@@ -44,7 +53,15 @@ const List = ({ experience, colorMode }: Props) => {
           >
             {experience.language === "en" ? "Company" : "الشركة"}
           </span>
-          {experience.company}
+          <AnimatedContainer
+            initialClassName="opacity-0 -ml-36"
+            transitionClassName="transition-all duration-[600ms] delay-[320ms] ease-in-out"
+            whileInViewClassName="opacity-100 -ml-0"
+            className={`w-full h-fit overflow-hidden`}
+            once
+          >
+            {experience.company}
+          </AnimatedContainer>
         </li>
         <li
           className={`${
@@ -62,7 +79,15 @@ const List = ({ experience, colorMode }: Props) => {
               ? "Employment status"
               : "حالة التوظيف"}
           </span>
-          {experience.employment_status}
+          <AnimatedContainer
+            initialClassName="opacity-0 -ml-36"
+            transitionClassName="transition-all duration-[600ms] delay-[520ms] ease-in-out"
+            whileInViewClassName="opacity-100 -ml-0"
+            className={`w-full h-fit overflow-hidden`}
+            once
+          >
+            {experience.employment_status}
+          </AnimatedContainer>
         </li>
         <li
           className={`${
@@ -78,7 +103,15 @@ const List = ({ experience, colorMode }: Props) => {
           >
             {experience.language === "en" ? "Employment period" : "فترة العمل"}
           </span>
-          {experience.employment_period}
+          <AnimatedContainer
+            initialClassName="opacity-0 -ml-36"
+            transitionClassName="transition-all duration-[600ms] delay-[720ms] ease-in-out"
+            whileInViewClassName="opacity-100 -ml-0"
+            className={`w-full h-fit overflow-hidden`}
+            once
+          >
+            {experience.employment_period}
+          </AnimatedContainer>
         </li>
         <li
           className={`${
@@ -92,7 +125,15 @@ const List = ({ experience, colorMode }: Props) => {
                 : "text-black border-black/20"
             }`}
           >
-            {experience.language === "en" ? "Responsibilities" : "المسؤوليات"}
+            <AnimatedContainer
+              initialClassName="opacity-0 -ml-36"
+              transitionClassName="transition-all duration-[600ms] delay-[920ms] ease-in-out"
+              whileInViewClassName="opacity-100 -ml-0"
+              className={`w-full h-fit overflow-hidden`}
+              once
+            >
+              {experience.language === "en" ? "Responsibilities" : "المسؤوليات"}
+            </AnimatedContainer>
           </span>
           <ul
             className={`max-h-[140px] overflow-y-scroll text-[12px] space-y-2 scrollbar-thin  scrollbar-thumb-rounded-full ${
@@ -106,7 +147,15 @@ const List = ({ experience, colorMode }: Props) => {
                 experience.language === "en" ? "" : "text-right pr-3"
               }`}
             >
-              <PortableText value={experience.responsibilities} />
+              <AnimatedContainer
+                initialClassName="opacity-0 -ml-64"
+                transitionClassName="transition-all duration-[600ms] delay-[1120ms] ease-in-out"
+                whileInViewClassName="opacity-100 -ml-0"
+                className={`w-full h-fit overflow-hidden`}
+                once
+              >
+                <PortableText value={experience.responsibilities} />
+              </AnimatedContainer>
             </li>
           </ul>
         </li>

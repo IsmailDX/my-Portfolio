@@ -4,6 +4,7 @@ import cloud from "@/public/images/cloud.jpg";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import AnimatedContainer from "../shared/AnimatedContainer";
 
 type Props = {
   language: string;
@@ -60,8 +61,27 @@ const SectionSeven = ({ language, colorMode, emailSent }: Props) => {
       }}
     >
       <div
-        className={`w-full max-w-[2440px] h-full flex items-center md:py-[5%] py-[6%] lg:px-32 md:px-24 px-5 space-y-[1%]`}
+        className={`w-full max-w-[2440px] h-full flex flex-col items-start justify-center md:py-[5%] py-[6%] lg:px-32 md:px-24 px-5 space-y-[1%]`}
       >
+        <AnimatedContainer
+          initialClassName="opacity-0 -mx-36"
+          transitionClassName="transition-all duration-[400ms] ease-out"
+          whileInViewClassName="opacity-100 -mx-0"
+          className={`w-full h-fit`}
+          once
+        >
+          <h1
+            className={`w-fit h-fit ${
+              colorMode === "dark" ? "text-white" : "text-black"
+            } ${
+              language === "en"
+                ? "sm:text-[30px] text-[25px] font-bold"
+                : "sm:text-[35px] text-[30px] arabic font-normal"
+            }`}
+          >
+            {language === "en" ? "Contact" : "اتصل بي"}
+          </h1>
+        </AnimatedContainer>
         <Formik
           initialValues={{ firstName: "", email: "", message: "" }}
           validationSchema={validationSchema}
@@ -69,14 +89,22 @@ const SectionSeven = ({ language, colorMode, emailSent }: Props) => {
         >
           <Form className="flex flex-col md:w-[50%] w-full space-y-5">
             <div>
-              <label
-                htmlFor="firstName"
-                className={`block mb-2 text-md font-medium ${
-                  colorMode === "dark" ? "text-white" : "text-black"
-                } ${language === "en" ? "text-left" : "arabic text-right"}`}
+              <AnimatedContainer
+                initialClassName="opacity-0 -mx-36"
+                transitionClassName="transition-all duration-[400ms] delay-[200ms] ease-out"
+                whileInViewClassName="opacity-100 -mx-0"
+                className={`w-full h-fit`}
+                once
               >
-                {language === "en" ? "Your Name" : "اسمك"}
-              </label>
+                <label
+                  htmlFor="firstName"
+                  className={`block mb-2 text-md font-medium ${
+                    colorMode === "dark" ? "text-white" : "text-black"
+                  } ${language === "en" ? "text-left" : "arabic text-right"}`}
+                >
+                  {language === "en" ? "Your Name" : "اسمك"}
+                </label>
+              </AnimatedContainer>
               <Field
                 type="text"
                 id="firstName"
@@ -94,14 +122,22 @@ const SectionSeven = ({ language, colorMode, emailSent }: Props) => {
               </div>
             </div>
             <div>
-              <label
-                htmlFor="firstName"
-                className={`block mb-2 text-md font-medium ${
-                  colorMode === "dark" ? "text-white" : "text-black"
-                } ${language === "en" ? "text-left" : "arabic text-right"}`}
+              <AnimatedContainer
+                initialClassName="opacity-0 -mx-36"
+                transitionClassName="transition-all duration-[400ms] delay-[400ms] ease-out"
+                whileInViewClassName="opacity-100 -mx-0"
+                className={`w-full h-fit`}
+                once
               >
-                {language === "en" ? "Your Email" : "بريدك الالكتروني"}
-              </label>
+                <label
+                  htmlFor="firstName"
+                  className={`block mb-2 text-md font-medium ${
+                    colorMode === "dark" ? "text-white" : "text-black"
+                  } ${language === "en" ? "text-left" : "arabic text-right"}`}
+                >
+                  {language === "en" ? "Your Email" : "بريدك الالكتروني"}
+                </label>
+              </AnimatedContainer>
               <Field
                 type="email"
                 id="email"
@@ -121,14 +157,22 @@ const SectionSeven = ({ language, colorMode, emailSent }: Props) => {
               </div>
             </div>
             <div>
-              <label
-                htmlFor="firstName"
-                className={`block mb-2 text-md font-medium ${
-                  colorMode === "dark" ? "text-white" : "text-black"
-                } ${language === "en" ? "text-left" : "arabic text-right"}`}
+              <AnimatedContainer
+                initialClassName="opacity-0 -mx-36"
+                transitionClassName="transition-all duration-[400ms] delay-[600ms] ease-out"
+                whileInViewClassName="opacity-100 -mx-0"
+                className={`w-full h-fit`}
+                once
               >
-                {language === "en" ? "Your Message" : "رسالتك"}
-              </label>
+                <label
+                  htmlFor="firstName"
+                  className={`block mb-2 text-md font-medium ${
+                    colorMode === "dark" ? "text-white" : "text-black"
+                  } ${language === "en" ? "text-left" : "arabic text-right"}`}
+                >
+                  {language === "en" ? "Your Message" : "رسالتك"}
+                </label>
+              </AnimatedContainer>
               <Field
                 as="textarea"
                 id="message"
@@ -143,6 +187,7 @@ const SectionSeven = ({ language, colorMode, emailSent }: Props) => {
                 }
               />
             </div>
+
             <button
               type="submit"
               className={`bg-transparent backdrop-blur-lg rounded-lg py-2 px-4 hover:bg-white/10 hover:scale-105
@@ -153,7 +198,14 @@ const SectionSeven = ({ language, colorMode, emailSent }: Props) => {
                    : "text-white border border-white"
                } ${language === "en" ? "" : "arabic"}`}
             >
-              {language === "en" ? "Submit" : "إرسال"}
+              <AnimatedContainer
+                initialClassName="opacity-0"
+                transitionClassName="transition-all duration-[800ms] ease-in-out"
+                whileInViewClassName="opacity-100"
+                className={`w-full h-fit`}
+              >
+                {language === "en" ? "Submit" : "إرسال"}
+              </AnimatedContainer>
             </button>
           </Form>
         </Formik>
