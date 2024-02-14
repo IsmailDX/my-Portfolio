@@ -4,13 +4,6 @@ import { StoreProvider } from "@/redux/StoreProvider";
 import Loading from "./loading";
 import { Suspense } from "react";
 
-export const metadata: Metadata = {
-  title: "Ismail | Portfolio",
-  description: "A website about Ismail and his work",
-  assets: ["/images/webIcon.png"],
-  icons: ["/images/webIcon.png"],
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
