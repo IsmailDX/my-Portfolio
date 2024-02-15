@@ -46,7 +46,7 @@ const SwiperComponent = ({ title, keyword, content }: Props) => {
         observeParents={true}
       >
         {content.map((item, index) => (
-          <>
+          <React.Fragment key={`${item._id}-${index}`}>
             {item.header === `${keyword}` && (
               <SwiperSlide
                 key={index}
@@ -72,7 +72,7 @@ const SwiperComponent = ({ title, keyword, content }: Props) => {
                 </div>
               </SwiperSlide>
             )}
-          </>
+          </React.Fragment>
         ))}
       </Swiper>
     </div>

@@ -93,19 +93,20 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
               {education
                 .sort((a, b) => a.order - b.order)
                 .map((item, index) => (
-                  <>
+                  <React.Fragment key={`${item._id}-${index}`}>
                     {item.type === "certificate" && (
                       <SwiperSlide className="w-full h-fit" key={index}>
                         <Image
                           src={item.image}
-                          width={700}
+                          width={500}
                           height={500}
                           className="w-full h-full object-contain"
                           alt="certificate"
+                          loading="lazy"
                         />
                       </SwiperSlide>
                     )}
-                  </>
+                  </React.Fragment>
                 ))}
               <div
                 className={`top-[45%] absolute z-50 button-next-slide right-0 duration-500 cursor-pointer select-none
@@ -146,7 +147,7 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
               key="thumbsSwiper"
             >
               {education.map((item, index) => (
-                <>
+                <React.Fragment key={`${item._id}-${index}-2`}>
                   {item.type === "certificate" && (
                     <SwiperSlide
                       className="w-full h-fit relative rounded-3xl"
@@ -160,14 +161,15 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
                       </div>
                       <Image
                         src={item.image}
-                        width={700}
+                        width={500}
                         height={500}
                         className="w-full h-full object-cover object-center sm:rounded-3xl rounded-lg"
                         alt="certificate"
+                        loading="lazy"
                       />
                     </SwiperSlide>
                   )}
-                </>
+                </React.Fragment>
               ))}
             </Swiper>
           </div>

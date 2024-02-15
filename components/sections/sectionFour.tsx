@@ -77,7 +77,7 @@ const SectionFour = ({ language, colorMode, experience }: Props) => {
             {experience
               .sort((a, b) => a.order - b.order)
               .map((exp, index) => (
-                <>
+                <React.Fragment key={`${exp._id}-${index}`}>
                   {language === exp.language && (
                     <SwiperSlide
                       className="md:pl-10 select-none h-full"
@@ -90,6 +90,7 @@ const SectionFour = ({ language, colorMode, experience }: Props) => {
                           width={400}
                           height={700}
                           className="lg:w-fit lg:h-full lg:opacity-100 h-0 w-0 opacity-0 object-contain absolute top-0 mr-[53%] select-none"
+                          loading="lazy"
                         />
 
                         <div
@@ -105,7 +106,7 @@ const SectionFour = ({ language, colorMode, experience }: Props) => {
                       </div>
                     </SwiperSlide>
                   )}
-                </>
+                </React.Fragment>
               ))}
           </Swiper>
         </div>

@@ -120,6 +120,7 @@ const SectionOne = ({
                               : "sm:opacity-100 sm:w-full sm:h-[500px] w-0 h-0"
                           }`}
                           once
+                          key={item._id}
                         >
                           <div
                             className={`overflow-hidden ${
@@ -132,8 +133,8 @@ const SectionOne = ({
                             <Image
                               src={item.image}
                               alt={item.name}
-                              width={500}
-                              height={500}
+                              width={1000}
+                              height={1000}
                               className="w-full h-full object-cover select-none"
                               blurDataURL={item.blurURL}
                             />
@@ -151,6 +152,7 @@ const SectionOne = ({
                           whileInViewClassName="opacity-100 ml-0"
                           className={`lg:w-[60%] w-fit h-fit`}
                           once
+                          key={item._id}
                         >
                           <div
                             className={`flex flex-col w-fit h-full pt-5 space-y-6 ${
@@ -204,6 +206,7 @@ const SectionOne = ({
                               : "sm:opacity-0 opacity-100 sm:w-[0px] sm:h-[0px] w-full h-[150px]"
                           }`}
                           once
+                          key={item._id}
                         >
                           <div
                             className={`relative ${

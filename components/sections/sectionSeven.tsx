@@ -67,7 +67,7 @@ const SectionSeven = ({ language, colorMode, emailSent }: Props) => {
           initialClassName="opacity-0 -mx-36"
           transitionClassName="transition-all duration-[400ms] ease-out"
           whileInViewClassName="opacity-100 -mx-0"
-          className={`w-full h-fit`}
+          className={`w-full h-fit mb-4`}
           once
         >
           <h1
