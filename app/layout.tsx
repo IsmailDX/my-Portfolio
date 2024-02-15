@@ -6,18 +6,18 @@ import { Suspense } from "react";
 
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
-  title: "Title webtsite",
-  description: "this is the desciption",
+  title: "Ismail's Portfolio Website",
+  description: "A website about Ismail and his work",
   openGraph: {
-    title: "Title webtsite",
-    description: "this is the desciption",
+    title: "Ismail | Portfolio",
+    description: "A website about Ismail and his work",
     images: "url/image.png",
   },
   twitter: {
     card: "summary_large_image",
-    site: "@eMartiiin94",
-    title: "Title webtsite",
-    description: "this is the desciption",
+    site: "@Ismail",
+    title: "Ismail | Portfolio",
+    description: "A website about Ismail and his work",
     images: "url/image.png",
   },
 };
