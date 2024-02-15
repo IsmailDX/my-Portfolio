@@ -4,20 +4,10 @@ import { StoreProvider } from "@/redux/StoreProvider";
 import Loading from "./loading";
 import { Suspense } from "react";
 
-export const metadata: Metadata = {
+export const metadata = {
+  title: "Next Dashboard",
+  description: "Dashboard wrote in Next.js",
   metadataBase: new URL("https://ismaildx.vercel.app/"),
-  title: "Ismail",
-  description: "A website about Ismail and his work",
-  openGraph: {
-    title: "Ismail",
-    description: "this is the desciption",
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@eMartiiin94",
-    title: "Title webtsite",
-    description: "this is the desciption",
-  },
 };
 
 export default function RootLayout({
