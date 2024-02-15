@@ -5,8 +5,21 @@ import Loading from "./loading";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-  title: "Ismail | Portfolio",
-  description: "A website about Ismail and his work",
+  metadataBase: new URL("http://localhost:3000"),
+  title: "Title webtsite",
+  description: "this is the desciption",
+  openGraph: {
+    title: "Title webtsite",
+    description: "this is the desciption",
+    images: "url/image.png",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@eMartiiin94",
+    title: "Title webtsite",
+    description: "this is the desciption",
+    images: "url/image.png",
+  },
 };
 
 export default function RootLayout({
