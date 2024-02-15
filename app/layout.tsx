@@ -11,14 +11,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ismail",
     description: "this is the desciption",
-    images: "url/image.png",
+    images: "/opengraph-image.png",
   },
   twitter: {
     card: "summary_large_image",
     site: "@eMartiiin94",
     title: "Title webtsite",
     description: "this is the desciption",
-    images: "url/image.png",
+    images: "/twitter-image.png",
   },
 };
 
