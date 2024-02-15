@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import dark from "@/public/images/darkModeSolo.png";
-import light from "@/public/images/lightModeSolo.png";
-import initalBack from "@/public/images/initialBack.png";
+import dark from "@/public/images/darkModeSolo.webp";
+import light from "@/public/images/lightModeSolo.webp";
+import initalBack from "@/public/images/initialBack.webp";
 import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import { changeColor } from "@/redux/features/colorMode/colorSlice";
 import { useEffect, useState } from "react";
@@ -128,12 +128,13 @@ export default function Home() {
             className="w-fit h-full absolute bottom-0 object-cover"
             onLoad={handleImageLoad}
             loading="eager"
+            priority={true}
           />
         ) : (
           <Image
             src={light}
-            width={644}
-            height={1039}
+            width={650}
+            height={1040}
             alt="lightSolo"
             className={`w-fit h-full absolute bottom-0 object-cover ${
               disappear
@@ -141,6 +142,7 @@ export default function Home() {
                 : "opacity-100 duration-[2s]"
             }`}
             loading="eager"
+            priority={true}
           />
         )}
       </div>

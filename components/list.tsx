@@ -31,7 +31,7 @@ const List = ({ experience, colorMode }: Props) => {
           >
             <span>{experience.jobTitle}</span>
             <Image
-              src={`/images/${experience.country}.png`}
+              src={`/images/${experience.country}.webp`}
               width={600}
               height={500}
               alt="flag"

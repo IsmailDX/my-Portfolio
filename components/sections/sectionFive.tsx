@@ -58,11 +58,12 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
           once
         >
           <Image
-            src="/images/malenia1.png"
-            width={700}
-            height={700}
+            src="/images/malenia1.webp"
+            width={1301}
+            height={1000}
             alt="malenia"
             className="lg:w-[45%] lg:h-fit lg:opacity-100 w-0 h-0 opacity-0 absolute bottom-0 lg:-ml-[10%] ml-0 select-none z-10"
+            loading="lazy"
           />
         </AnimatedContainer>
         <div className="overflow-hidden pt-[2%] w-fit h-full flex flex-col lg:items-end items-center justify-center gap-7">
@@ -93,19 +94,20 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
               {education
                 .sort((a, b) => a.order - b.order)
                 .map((item, index) => (
-                  <>
+                  <React.Fragment key={`${item._id}-${index}`}>
                     {item.type === "certificate" && (
                       <SwiperSlide className="w-full h-fit" key={index}>
                         <Image
                           src={item.image}
-                          width={700}
+                          width={500}
                           height={500}
                           className="w-full h-full object-contain"
                           alt="certificate"
+                          loading="lazy"
                         />
                       </SwiperSlide>
                     )}
-                  </>
+                  </React.Fragment>
                 ))}
               <div
                 className={`top-[45%] absolute z-50 button-next-slide right-0 duration-500 cursor-pointer select-none
@@ -146,7 +148,7 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
               key="thumbsSwiper"
             >
               {education.map((item, index) => (
-                <>
+                <React.Fragment key={`${item._id}-${index}-2`}>
                   {item.type === "certificate" && (
                     <SwiperSlide
                       className="w-full h-fit relative rounded-3xl"
@@ -160,14 +162,15 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
                       </div>
                       <Image
                         src={item.image}
-                        width={700}
+                        width={500}
                         height={500}
                         className="w-full h-full object-cover object-center sm:rounded-3xl rounded-lg"
                         alt="certificate"
+                        loading="lazy"
                       />
                     </SwiperSlide>
                   )}
-                </>
+                </React.Fragment>
               ))}
             </Swiper>
           </div>

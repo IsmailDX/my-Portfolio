@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import leaf from "@/public/images/leaf.png";
+import leaf from "@/public/images/leaf.webp";
 import { myStoryPage } from "@/types/myStoryPage";
 import SwiperComponent from "../swiper";
 import AnimatedContainer from "../shared/AnimatedContainer";
@@ -22,6 +22,7 @@ const SectionThree = ({ colorImage, language, colorMode, content }: Props) => {
           width={700}
           height={500}
           className="absolute 2xl:pt-[5%] pt-10 object-center 2xl:w-[45%] md:w-[60%] w-[90%] h-fit object-contain z-10 select-none"
+          loading="lazy"
         />
         {colorImage.map((item) => (
           <React.Fragment key={item._id}>

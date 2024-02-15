@@ -25,10 +25,10 @@ const config: Config = {
     },
     extend: {
       backgroundImage: {
-        parallax: "url('/images/darkBack.png')",
-        parallax2: "url('/images/redBg.jpg')",
-        parallax3: "url('/images/tree.jpg')",
-        parallax4: "url('/images/section5.jpg')",
+        parallax: "url('/images/darkBack.webp')",
+        parallax2: "url('/images/redBg.webp')",
+        parallax3: "url('/images/tree.webp')",
+        parallax4: "url('/images/section5.webp')",
       },
     },
   },

@@ -4,9 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
-import card from "@/public/images/card.png";
+import card from "@/public/images/card.webp";
 import Image from "next/image";
-import cardSmall from "@/public/images/cardsmall.png";
+import cardSmall from "@/public/images/cardsmall.webp";
 import { myStoryPage } from "@/types/myStoryPage";
 
 type Props = {
@@ -46,7 +46,7 @@ const SwiperComponent = ({ title, keyword, content }: Props) => {
         observeParents={true}
       >
         {content.map((item, index) => (
-          <>
+          <React.Fragment key={`${item._id}-${index}`}>
             {item.header === `${keyword}` && (
               <SwiperSlide
                 key={index}
@@ -72,7 +72,7 @@ const SwiperComponent = ({ title, keyword, content }: Props) => {
                 </div>
               </SwiperSlide>
             )}
-          </>
+          </React.Fragment>
         ))}
       </Swiper>
     </div>

@@ -17,10 +17,10 @@ const EmailScreen = ({ showEmail }: Props) => {
           className={`w-screen h-[100dvh] fixed z-50 select-none flex justify-center items-center`}
         >
           <Image
-            src="/images/email-mess.png"
+            src="/images/email-mess.webp"
             alt="Email"
-            width={1000}
-            height={1400}
+            width={1920}
+            height={1080}
             className="w-screen h-full object-cover"
           />
         </AnimatedContainer>

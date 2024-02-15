@@ -99,6 +99,7 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
                       alt="ProjectImage"
                       className="w-full h-full object-cover object-center rounded-2xl"
                       blurDataURL={project.blurURL}
+                      loading="lazy"
                     />
                   </div>
                   <div className="w-full h-fit flex-col pt-[4%] sm:pb-[10%] pb-[5px]">
