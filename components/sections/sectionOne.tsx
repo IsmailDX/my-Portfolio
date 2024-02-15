@@ -3,7 +3,7 @@ import React from "react";
 import { myStoryPage } from "@/types/myStoryPage";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
-import border from "@/public/images/border.webp";
+import border from "@/public/images/border.png";
 import AnimatedContainer from "../shared/AnimatedContainer";
 
 type Props = {
@@ -48,8 +48,8 @@ const SectionOne = ({
                 <Image
                   src={item.image}
                   alt={item.name}
-                  width={1200}
-                  height={630}
+                  width={720}
+                  height={720}
                   className={`absolute object-contain z-10 select-none ${
                     language === "ar"
                       ? "md:w-[450px] sm:w-[400px] w-[300px] sm:-top-56 -top-36"
@@ -57,7 +57,7 @@ const SectionOne = ({
                   }`}
                   onLoad={handleImageLoad}
                   blurDataURL={item.blurURL}
-                  loading="lazy"
+                  priority
                 />
               </AnimatedContainer>
               <div className="relative w-full h-full max-w-[2440px]">
@@ -120,7 +120,6 @@ const SectionOne = ({
                               : "sm:opacity-100 sm:w-full sm:h-[500px] w-0 h-0"
                           }`}
                           once
-                          key={item._id}
                         >
                           <div
                             className={`overflow-hidden ${
@@ -128,6 +127,7 @@ const SectionOne = ({
                                 ? "opacity-0 w-[0px] h-0"
                                 : "sm:opacity-100 sm:w-full sm:h-[500px] w-0 h-0"
                             }`}
+                            key={item._id}
                           >
                             <Image
                               src={item.image}
@@ -136,7 +136,6 @@ const SectionOne = ({
                               height={500}
                               className="w-full h-full object-cover select-none"
                               blurDataURL={item.blurURL}
-                              loading="lazy"
                             />
                           </div>
                         </AnimatedContainer>
@@ -152,7 +151,6 @@ const SectionOne = ({
                           whileInViewClassName="opacity-100 ml-0"
                           className={`lg:w-[60%] w-fit h-fit`}
                           once
-                          key={item._id}
                         >
                           <div
                             className={`flex flex-col w-fit h-full pt-5 space-y-6 ${
@@ -160,6 +158,7 @@ const SectionOne = ({
                                 ? "items-start justify-start"
                                 : "items-end arabic text-right"
                             }`}
+                            key={item._id}
                           >
                             <h1
                               className={`${
@@ -205,7 +204,6 @@ const SectionOne = ({
                               : "sm:opacity-0 opacity-100 sm:w-[0px] sm:h-[0px] w-full h-[150px]"
                           }`}
                           once
-                          key={item._id}
                         >
                           <div
                             className={`relative ${
@@ -213,6 +211,7 @@ const SectionOne = ({
                                 ? "opacity-100 sm:w-full sm:h-[500px] w-full h-[150px]"
                                 : "sm:opacity-0 opacity-100 sm:w-[0px] sm:h-[0px] w-full h-[150px]"
                             }`}
+                            key={item._id}
                           >
                             <Image
                               src={item.image}
@@ -221,7 +220,6 @@ const SectionOne = ({
                               height={1000}
                               className="w-full h-full object-cover select-none"
                               blurDataURL={item.blurURL}
-                              loading="lazy"
                             />
                             <Image
                               src={border}
@@ -229,7 +227,6 @@ const SectionOne = ({
                               width={1000}
                               height={1000}
                               className="w-fit h-fit absolute lg:-top-4 -top-2 select-none"
-                              loading="lazy"
                             />
 
                             <Image
@@ -237,8 +234,7 @@ const SectionOne = ({
                               alt="border1"
                               width={1000}
                               height={1000}
-                              className="w-fit h-fit absolute lg:-bottom-4 -bottom-2 -right-[35%] select-none"
-                              loading="lazy"
+                              className="w-fit h-fit absolute lg:-bottom-4 -bottom-2  -right-[35%] select-none"
                             />
                           </div>
                         </AnimatedContainer>

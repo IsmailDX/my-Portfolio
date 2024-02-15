@@ -12,11 +12,11 @@ const Loading = () => {
     >
       <div className="w-screen min-h-[100dvh] bg-black flex sm:justify-end sm:items-end justify-center items-center">
         <Image
-          src="/images/loadingIcon.webp"
+          src="/images/loadingIcon.jpg"
           alt="loadingIcon"
           className="object-contain p-10 animate-pulse"
-          width={242}
-          height={194}
+          width={280}
+          height={280}
           loading="eager"
         />
       </div>

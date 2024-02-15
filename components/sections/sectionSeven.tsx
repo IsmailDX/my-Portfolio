@@ -1,6 +1,6 @@
 import React from "react";
-import formbg from "@/public/images/formback.webp";
-import cloud from "@/public/images/cloud.webp";
+import formbg from "@/public/images/formback.jpg";
+import cloud from "@/public/images/cloud.jpg";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";

@@ -4,7 +4,7 @@ import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Scrollbar, FreeMode } from "swiper/modules";
 import Image from "next/image";
-import border from "@/public/images/border.webp";
+import border from "@/public/images/border.png";
 import List from "../list";
 import { experience } from "@/types/experience";
 import AnimatedContainer from "../shared/AnimatedContainer";
@@ -25,10 +25,9 @@ const SectionFour = ({ language, colorMode, experience }: Props) => {
       <Image
         src={border}
         alt="border"
-        width={1920}
-        height={80}
+        width={1500}
+        height={500}
         className="absolute top-0 left-0 w-full h-fit object-contain z-10 -mt-[2%] select-none"
-        loading="lazy"
       />
       <div className="w-full max-w-[2440px] lg:px-32 px-5 py-16 flex flex-col space-y-7 overflow-hidden">
         <AnimatedContainer
@@ -78,7 +77,7 @@ const SectionFour = ({ language, colorMode, experience }: Props) => {
             {experience
               .sort((a, b) => a.order - b.order)
               .map((exp, index) => (
-                <React.Fragment key={`${exp._id}-${index}`}>
+                <>
                   {language === exp.language && (
                     <SwiperSlide
                       className="md:pl-10 select-none h-full"
@@ -86,12 +85,11 @@ const SectionFour = ({ language, colorMode, experience }: Props) => {
                     >
                       <div className="w-full h-full flex flex-row sm:justify-end md:p-5 p-0 relative max-w-[500px] overflow-visible">
                         <Image
-                          src={`/images/body${exp.order + 1}.webp`}
+                          src={`/images/body${exp.order + 1}.png`}
                           alt="body"
                           width={400}
                           height={700}
                           className="lg:w-fit lg:h-full lg:opacity-100 h-0 w-0 opacity-0 object-contain absolute top-0 mr-[53%] select-none"
-                          loading="lazy"
                         />
 
                         <div
@@ -107,7 +105,7 @@ const SectionFour = ({ language, colorMode, experience }: Props) => {
                       </div>
                     </SwiperSlide>
                   )}
-                </React.Fragment>
+                </>
               ))}
           </Swiper>
         </div>
