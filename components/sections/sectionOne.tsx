@@ -40,7 +40,7 @@ const SectionOne = ({
                 whileInViewClassName="opacity-100 mx-0"
                 className={`absolute w-full h-fit flex-shrink object-contain z-10 select-none ${
                   language === "ar"
-                    ? "md:w-[450px] sm:w-[400px] w-[300px]"
+                    ? "md:w-[450px] sm:w-[400px] sm:pl-0 w-[300px] px-[12%]"
                     : "lg:w-[830px] md:w-[720px] sm:w-[600px] w-[500px]"
                 }`}
                 once
