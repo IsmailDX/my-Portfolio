@@ -21,7 +21,7 @@ const MyStory = async () => {
 
   return (
     <div className="w-full h-[100svh]">
-      <title>Portfolio | My Story</title>
+      <title>Ismail's Story</title>
       <Suspense fallback={<Loading />}>
         <AllSections
           items={media}

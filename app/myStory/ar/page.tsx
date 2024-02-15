@@ -21,7 +21,7 @@ const MyStory = async () => {
 
   return (
     <div className="w-full h-[100svh]">
-      <title>Portfolio | قصتي</title>
+      <title>قصت اسماعيل</title>
       <Suspense fallback={<Loading />}>
         <AllSections
           items={media}
