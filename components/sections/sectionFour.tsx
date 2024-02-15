@@ -90,7 +90,6 @@ const SectionFour = ({ language, colorMode, experience }: Props) => {
                           width={400}
                           height={700}
                           className="lg:w-fit lg:h-full lg:opacity-100 h-0 w-0 opacity-0 object-contain absolute top-0 mr-[53%] select-none"
-                          loading="lazy"
                         />
 
                         <div

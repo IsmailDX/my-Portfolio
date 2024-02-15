@@ -102,7 +102,6 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
                           height={500}
                           className="w-full h-full object-contain"
                           alt="certificate"
-                          loading="lazy"
                         />
                       </SwiperSlide>
                     )}
@@ -165,7 +164,6 @@ const SectionFive = ({ language, colorMode, education }: Props) => {
                         height={500}
                         className="w-full h-full object-cover object-center sm:rounded-3xl rounded-lg"
                         alt="certificate"
-                        loading="lazy"
                       />
                     </SwiperSlide>
                   )}
