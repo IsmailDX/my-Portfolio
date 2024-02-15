@@ -5,7 +5,7 @@ import Loading from "./loading";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL("https://ismaildx.vercel.app/"),
   title: "Ismail",
   description: "A website about Ismail and his work",
   openGraph: {
