@@ -111,9 +111,9 @@ const SectionOne = ({
                     (item) =>
                       item.name === `section1BodyImage-${1}-${colorMode}` && (
                         <AnimatedContainer
-                          initialClassName="opacity-0 -ml-48"
-                          transitionClassName="transition-all duration-[600ms]"
-                          whileInViewClassName="opacity-100 ml-0"
+                          initialClassName="sm:opacity-0 sm:-ml-48"
+                          transitionClassName="sm:transition-all sm:duration-[600ms]"
+                          whileInViewClassName="sm:opacity-100 sm:ml-0"
                           className={`h-fit ${
                             language === "en"
                               ? "opacity-0 w-0 h-0"
@@ -126,7 +126,7 @@ const SectionOne = ({
                             className={`relative ${
                               language === "en"
                                 ? "sm:opacity-0 opacity-100 sm:w-[0px] sm:h-[0px] w-0"
-                                : "opacity-100 sm:w-full sm:h-[500px] w-full h-[150px]"
+                                : "opacity-100 sm:w-full sm:h-[500px] w-0 h-0"
                             }`}
                             key={item._id}
                           >
