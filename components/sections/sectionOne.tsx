@@ -102,7 +102,7 @@ const SectionOne = ({
                   w-full h-fit flex sm:flex-row flex-col sm:items-start ${
                     language === "en"
                       ? "items-start sm:pt-72 "
-                      : "items-end sm:pt-80"
+                      : "items-end sm:pt-80 pt-0"
                   } 
                   md:space-x-30 sm:space-x-10 space-y-10 overflow-hidden`}
                   key={item._id}
@@ -116,7 +116,7 @@ const SectionOne = ({
                           whileInViewClassName="opacity-100 ml-0"
                           className={`h-fit ${
                             language === "en"
-                              ? "opacity-0 w-[0px] h-0"
+                              ? "opacity-0 w-0 h-0"
                               : "sm:opacity-100 sm:w-full sm:h-[500px] w-0 h-0"
                           }`}
                           once
@@ -125,7 +125,7 @@ const SectionOne = ({
                           <div
                             className={`relative ${
                               language === "en"
-                                ? "sm:opacity-0 opacity-100 sm:w-[0px] sm:h-[0px] w-full"
+                                ? "sm:opacity-0 opacity-100 sm:w-[0px] sm:h-[0px] w-0"
                                 : "opacity-100 sm:w-full sm:h-[500px] w-full h-[150px]"
                             }`}
                             key={item._id}
