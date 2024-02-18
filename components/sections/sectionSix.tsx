@@ -79,7 +79,7 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
                   initialClassName="opacity-0 -mx-36"
                   transitionClassName="transition-all duration-[400ms] ease-in-out"
                   whileInViewClassName="opacity-100 -mx-0"
-                  className={`w-full sm:h-fit h-[67svh] rounded-lg flex-col justify-center items-start relative overflow-hidden
+                  className={`w-full h-fit rounded-lg flex-col justify-center items-start relative overflow-hidden
                   pt-3 px-3 backdrop-filter backdrop-blur-sm ${
                     colorMode === "dark"
                       ? "bg-white/15"
