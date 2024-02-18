@@ -5,7 +5,7 @@ import Link from "next/link";
 type AllButtonsProps = {
   colorMode: string;
   handleClickWithDelay?: () => void;
-  isDisabled: boolean;
+
   languageState?: string;
   languageFun?: () => void;
 };
@@ -13,7 +13,7 @@ type AllButtonsProps = {
 const AllButtons = ({
   colorMode,
   handleClickWithDelay,
-  isDisabled,
+
   languageState,
   languageFun,
 }: AllButtonsProps) => {
@@ -29,17 +29,9 @@ const AllButtons = ({
         </Link>
       )}
       {colorMode === "dark" ? (
-        <ButtonHome
-          title="Light mode"
-          handleClick={handleClickWithDelay}
-          state={isDisabled}
-        />
+        <ButtonHome title="Light mode" handleClick={handleClickWithDelay} />
       ) : (
-        <ButtonHome
-          title="Dark mode"
-          handleClick={handleClickWithDelay}
-          state={isDisabled}
-        />
+        <ButtonHome title="Dark mode" handleClick={handleClickWithDelay} />
       )}
       {languageState === "en" ? (
         <ButtonHome title="عربي" handleClick={languageFun} languageKey="ar" />

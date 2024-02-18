@@ -36,7 +36,7 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
             } ${
               language === "en"
                 ? "sm:text-[30px] text-[25px] font-bold"
-                : "sm:text-[35px] text-[30px] arabic font-normal"
+                : "sm:text-[35px] text-[30px] arabic font-normal text-right w-full"
             }`}
           >
             {language === "en" ? "Projects" : "مشاريع"}
@@ -46,16 +46,20 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
           initialClassName="opacity-0 -mx-36"
           transitionClassName="transition-all duration-[400ms] delay-[200ms] ease-out"
           whileInViewClassName="opacity-100 -mx-0"
-          className={`w-full h-fit`}
+          className={`w-full h-fit flex ${
+            language === "en"
+              ? "justify-start items-start"
+              : "justify-end items-end"
+          }`}
           once
         >
           <p
             className={`${
               colorMode === "dark" ? "text-white" : "text-black"
-            } text-[15px] lg:w-[40%] md:w-[60%] w-full ${
+            } text-[15px] ${
               language === "en"
-                ? "text-[15px] font-bold"
-                : "text-[15px] arabic font-normal text-right"
+                ? "text-[15px] font-bold lg:w-[40%] md:w-[60%] w-full"
+                : "text-[15px] arabic font-normal text-right w-full"
             }`}
           >
             {language === "en"
@@ -75,8 +79,8 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
                   initialClassName="opacity-0 -mx-36"
                   transitionClassName="transition-all duration-[400ms] ease-in-out"
                   whileInViewClassName="opacity-100 -mx-0"
-                  className={`w-full sm:h-full h-[67svh] rounded-lg flex-col justify-center items-start relative overflow-hidden
-                  p-3 backdrop-filter backdrop-blur-sm ${
+                  className={`w-full sm:h-fit h-[67svh] rounded-lg flex-col justify-center items-start relative overflow-hidden
+                  pt-3 px-3 backdrop-filter backdrop-blur-sm ${
                     colorMode === "dark"
                       ? "bg-white/15"
                       : "border border-black/10 bg-white/90 shadow-lg"
@@ -101,9 +105,9 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
                       blurDataURL={project.blurURL}
                     />
                   </div>
-                  <div className="w-full h-fit flex-col pt-[4%] sm:pb-[10%] pb-[5px]">
+                  <div className="w-full h-fit flex-col pt-[4%] pb-[5px]">
                     <h1
-                      className={`${
+                      className={`whitespace-nowrap text-ellipsis overflow-hidden ${
                         colorMode === "dark" ? "text-white" : "text-black"
                       } font-bold text-xl`}
                     >
@@ -112,13 +116,21 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
                     <div
                       className={`${
                         colorMode === "dark" ? "text-white/70" : "text-black/70"
-                      } text-[82%] w-full pt-[1%]`}
+                      } text-[82%] w-full h-36 pt-[1%] overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full ${
+                        colorMode === "dark"
+                          ? "scrollbar-thumb-white/30 scrollbar-track-white/10"
+                          : "scrollbar-thumb-black/30 scrollbar-track-black/5"
+                      }`}
                     >
                       <PortableText value={project.description} />
                     </div>
                     <div
-                      className="w-full h-fit flex gap-2 absolute bottom-0 left-0 overflow-x-auto scrollbar-thin scrollbar-thumb-white/30
-                     scrollbar-track-white/10 scrollbar-thumb-rounded-full pb-1 pl-3"
+                      className={`w-full h-fit flex gap-2 overflow-x-scroll scrollbar-thin
+                     scrollbar-track-white/10 scrollbar-thumb-rounded-full pb-1 pt-3 ${
+                       colorMode === "dark"
+                         ? "scrollbar-thumb-white/30 scrollbar-track-white/10"
+                         : "scrollbar-thumb-black/30 scrollbar-track-black/5"
+                     }`}
                     >
                       {project.technologies.map((item) => (
                         <p

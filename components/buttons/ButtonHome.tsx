@@ -4,14 +4,14 @@ import { Howl } from "howler";
 type ButtonProps = {
   title: string;
   handleClick?: () => void;
-  state?: boolean;
+
   languageKey?: string;
 };
 
 const ButtonHome = ({
   title,
   handleClick,
-  state,
+
   languageKey,
 }: ButtonProps) => {
   var sound = new Howl({
@@ -26,8 +26,7 @@ const ButtonHome = ({
   return (
     <div
       className={`w-full bg-[#0f0e0c]/95 hover:bg-[#3f3b2f]/95 flex justify-center items-center py-2 px-2 border-2 
-      border-[#6f6f63] shadow-[0_0px_3px_1px_rgba(111,111,99,1)]
-       ${state ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
+      border-[#6f6f63] shadow-[0_0px_3px_1px_rgba(111,111,99,1)] cursor-pointer`}
       onClick={() => {
         handleClick && handleClick();
         sound.play();

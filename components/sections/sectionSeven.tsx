@@ -67,19 +67,19 @@ const SectionSeven = ({ language, colorMode, emailSent }: Props) => {
           initialClassName="opacity-0 -mx-36"
           transitionClassName="transition-all duration-[400ms] ease-out"
           whileInViewClassName="opacity-100 -mx-0"
-          className={`w-full h-fit mb-4`}
+          className={`w-full h-fit mb-4 md:w-[50%]`}
           once
         >
           <h1
-            className={`w-fit h-fit ${
+            className={`w-full h-fit ${
               colorMode === "dark" ? "text-white" : "text-black"
             } ${
               language === "en"
                 ? "sm:text-[30px] text-[25px] font-bold"
-                : "sm:text-[35px] text-[30px] arabic font-normal"
+                : "sm:text-[35px] text-[30px] arabic font-normal text-right"
             }`}
           >
-            {language === "en" ? "Contact" : "اتصل بي"}
+            {language === "en" ? "Get in Touch" : "اتصل بي"}
           </h1>
         </AnimatedContainer>
         <Formik

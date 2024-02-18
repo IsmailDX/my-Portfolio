@@ -123,10 +123,10 @@ const SectionOne = ({
                           key={item._id}
                         >
                           <div
-                            className={`overflow-hidden ${
+                            className={`relative ${
                               language === "en"
-                                ? "opacity-0 w-[0px] h-0"
-                                : "sm:opacity-100 sm:w-full sm:h-[500px] w-0 h-0"
+                                ? "sm:opacity-0 opacity-100 sm:w-[0px] sm:h-[0px] w-full h-[150px]"
+                                : "opacity-100 sm:w-full sm:h-[500px] w-full h-[150px]"
                             }`}
                             key={item._id}
                           >
@@ -137,6 +137,21 @@ const SectionOne = ({
                               height={1000}
                               className="w-full h-full object-cover select-none"
                               blurDataURL={item.blurURL}
+                            />
+                            <Image
+                              src={border}
+                              alt="border1"
+                              width={1000}
+                              height={1000}
+                              className="w-fit h-fit absolute lg:-top-4 -top-2 select-none"
+                            />
+
+                            <Image
+                              src={border}
+                              alt="border1"
+                              width={1000}
+                              height={1000}
+                              className="w-fit h-fit absolute lg:-bottom-4 -bottom-2  -right-[35%] select-none"
                             />
                           </div>
                         </AnimatedContainer>
