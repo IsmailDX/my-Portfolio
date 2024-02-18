@@ -74,19 +74,20 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
           {projects
             .sort((a, b) => a.order - b.order)
             .map((project) => (
-              <Link key={project._id} href={project.webLink} target="_blank">
-                <AnimatedContainer
-                  initialClassName="md:opacity-0 md:-mx-36"
-                  transitionClassName="transition-all duration-[400ms] ease-in-out"
-                  whileInViewClassName="md:opacity-100 md:-mx-0"
-                  className={`w-full h-fit rounded-lg flex-col justify-center items-start relative overflow-hidden
+              <AnimatedContainer
+                initialClassName="opacity-0 md:-mx-36 -mx-10"
+                transitionClassName="transition-all md:duration-[400ms] duration-[100ms] ease-in-out"
+                whileInViewClassName="opacity-100 -mx-0"
+                className={`w-full h-fit rounded-lg flex-col justify-center items-start relative overflow-hidden
                   pt-3 px-3 backdrop-filter backdrop-blur-sm ${
                     colorMode === "dark"
                       ? "bg-white/15"
                       : "border border-black/10 bg-white/90 shadow-lg"
                   } hover:scale-105 transition-all duration-200 ease-out cursor-pointer group`}
-                  once
-                >
+                once
+                key={project._id}
+              >
+                <Link href={project.webLink} target="_blank">
                   <div className="w-full h-fit relative">
                     <div
                       className="w-full h-full bg-black/60 absolute top-0 left-0 rounded-2xl flex justify-center items-center 
@@ -142,8 +143,8 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
                       ))}
                     </div>
                   </div>
-                </AnimatedContainer>
-              </Link>
+                </Link>
+              </AnimatedContainer>
             ))}
         </div>
       </div>
