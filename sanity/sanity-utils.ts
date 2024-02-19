@@ -67,7 +67,7 @@ export async function getmyEducation(): Promise<education[]> {
   return createClient(clientConfig).fetch(
     groq`*[_type == "education"]{
       _id,
-      _createdAt,
+       _createdAt,
       name,
       schoolName,
       graduateDate,
