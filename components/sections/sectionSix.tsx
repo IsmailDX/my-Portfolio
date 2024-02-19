@@ -75,10 +75,10 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
             .sort((a, b) => a.order - b.order)
             .map((project) => (
               <AnimatedContainer
-                initialClassName="md:opacity-0 md:-mx-36"
-                transitionClassName="md:transition-all md:duration-[400ms] md:ease-in-out"
-                whileInViewClassName="md:opacity-100 md:-mx-0"
-                className={`w-full sm:h-fit h-[425px] rounded-lg flex-col justify-center items-start relative overflow-hidden
+                initialClassName="opacity-0 md:-mx-36"
+                transitionClassName="transition-all md:duration-[400ms] duration-[800ms] ease-in-out"
+                whileInViewClassName="opacity-100 md:-mx-0"
+                className={`w-full sm:h-fit h-fit rounded-lg flex-col justify-center items-start relative overflow-hidden
                   pt-3 px-3 backdrop-filter backdrop-blur-sm ${
                     colorMode === "dark"
                       ? "bg-white/15"
