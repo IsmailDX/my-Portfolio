@@ -74,20 +74,24 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
           {projects
             .sort((a, b) => a.order - b.order)
             .map((project) => (
-              <AnimatedContainer
-                initialClassName="opacity-0 md:-mx-36"
-                transitionClassName="transition-all md:duration-[400ms] duration-[800ms] ease-in-out"
-                whileInViewClassName="opacity-100 md:-mx-0"
-                className={`w-full sm:h-fit h-fit rounded-lg flex-col justify-center items-start relative overflow-hidden
+              <Link
+                href={project.webLink}
+                target="_blank"
+                key={project._id}
+                className="sm:h-fit h-[460px]"
+              >
+                <AnimatedContainer
+                  initialClassName="opacity-0 md:-mx-36"
+                  transitionClassName="transition-all md:duration-[400ms] duration-[800ms] ease-in-out"
+                  whileInViewClassName="opacity-100 md:-mx-0"
+                  className={`w-full sm:h-fit h-fit rounded-lg flex-col justify-center items-start relative overflow-hidden
                   pt-3 px-3 backdrop-filter backdrop-blur-sm ${
                     colorMode === "dark"
                       ? "bg-white/15"
                       : "border border-black/10 bg-white/90 shadow-lg"
                   } hover:scale-105 transition-all duration-200 ease-out cursor-pointer group`}
-                once
-                key={project._id}
-              >
-                <Link href={project.webLink} target="_blank">
+                  once
+                >
                   <div className="w-full h-fit relative">
                     <div
                       className="w-full h-full bg-black/60 absolute top-0 left-0 rounded-2xl flex justify-center items-center 
@@ -143,8 +147,8 @@ const SectionSix = ({ language, colorMode, projects }: Props) => {
                       ))}
                     </div>
                   </div>
-                </Link>
-              </AnimatedContainer>
+                </AnimatedContainer>
+              </Link>
             ))}
         </div>
       </div>
