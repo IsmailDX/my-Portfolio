@@ -109,7 +109,7 @@ const SectionSeven = ({ language, colorMode, emailSent }: Props) => {
                 type="text"
                 id="firstName"
                 name="firstName"
-                className={`borderStyles ${
+                className={`borderStyles w-full ${
                   language === "en" ? "text-left" : "text-right arabic"
                 }`}
                 placeholder={
@@ -142,7 +142,7 @@ const SectionSeven = ({ language, colorMode, emailSent }: Props) => {
                 type="email"
                 id="email"
                 name="email"
-                className={`borderStyles ${
+                className={`borderStyles w-full ${
                   language === "en" ? "text-left" : "text-right arabic"
                 }`}
                 placeholder={
@@ -177,7 +177,7 @@ const SectionSeven = ({ language, colorMode, emailSent }: Props) => {
                 as="textarea"
                 id="message"
                 name="message"
-                className={`borderStyles resize-y h-28 ${
+                className={`borderStyles w-full resize-y h-28 ${
                   language === "en" ? "text-left" : "text-right arabic"
                 }`}
                 placeholder={

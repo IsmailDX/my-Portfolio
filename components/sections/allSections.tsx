@@ -20,6 +20,7 @@ import EmailScreen from "./emailScreen";
 import { useDispatch } from "react-redux";
 import { showEmailScreen } from "@/redux/features/email/emailSlice";
 import { Howl } from "howler";
+import Footer from "./footer";
 
 type Props = {
   items: myStoryPage[];
@@ -155,6 +156,7 @@ const AllSections = ({
             colorMode={colorMode}
             emailSent={handleEmailSent}
           />
+          <Footer colorMode={colorMode} />
         </div>
       </div>
     </section>

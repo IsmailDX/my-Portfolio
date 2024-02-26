@@ -29,6 +29,8 @@ const config: Config = {
         parallax2: "url('/images/redBg.jpg')",
         parallax3: "url('/images/tree.jpg')",
         parallax4: "url('/images/section5.jpg')",
+        parallax5: "url('/images/formback.jpg')",
+        parallax6: "url('/images/section5.jpg')",
       },
     },
   },
