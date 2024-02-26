@@ -156,7 +156,7 @@ const AllSections = ({
             colorMode={colorMode}
             emailSent={handleEmailSent}
           />
-          <Footer colorMode={colorMode} />
+          <Footer colorMode={colorMode} language={language} />
         </div>
       </div>
     </section>
