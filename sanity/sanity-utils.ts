@@ -84,8 +84,8 @@ export async function getmyEducation(): Promise<education[]> {
 export async function getmyExperience(): Promise<experience[]> {
   return createClient(clientConfig).fetch(
     groq`*[_type == "experience"]{
-      _id,
-      jobTitle,
+       _id,
+       jobTitle,
       company,
       country,
       employment_status,
