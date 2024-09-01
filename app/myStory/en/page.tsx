@@ -11,6 +11,9 @@ import AllSections from "@/components/sections/allSections";
 import Loading from "@/app/loading";
 import { Suspense } from "react";
 
+//to refresh data to get fresh data from sanity
+export const revalidate = 30;
+
 const MyStory = async () => {
   const media = await getmyMedia();
   const content = await getmyContent();
