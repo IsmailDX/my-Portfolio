@@ -4,6 +4,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { sendGAEvent } from "@next/third-parties/google";
 
 type Props = {
   colorMode: string;
@@ -81,6 +82,7 @@ const Footer = ({ colorMode, language }: Props) => {
                    ? "text-black border border-black group-hover:font-bold"
                    : "text-white border border-white hover:text-[#f9e686]/90"
                } `}
+                onClick={() => sendGAEvent("Download CV", "CV Downloaded")}
               >
                 {language === "en" ? "Download CV" : "CV"}
               </button>
