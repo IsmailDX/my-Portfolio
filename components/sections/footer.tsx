@@ -84,6 +84,7 @@ const Footer = ({ colorMode, language }: Props) => {
                    : "text-white border border-white hover:text-[#f9e686]/90"
                } `}
                 onClick={() =>
+                  //should be in a client component to work
                   sendGAEvent({ event: "Download CV", value: "value" })
                 }
               >
