@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
@@ -82,7 +83,9 @@ const Footer = ({ colorMode, language }: Props) => {
                    ? "text-black border border-black group-hover:font-bold"
                    : "text-white border border-white hover:text-[#f9e686]/90"
                } `}
-                onClick={() => sendGAEvent("Download CV", "CV Downloaded")}
+                onClick={() =>
+                  sendGAEvent({ event: "Download CV", value: "value" })
+                }
               >
                 {language === "en" ? "Download CV" : "CV"}
               </button>
