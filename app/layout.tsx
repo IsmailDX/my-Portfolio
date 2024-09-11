@@ -2,6 +2,7 @@ import "./globals.css";
 import { StoreProvider } from "@/redux/StoreProvider";
 import Loading from "./loading";
 import { Suspense } from "react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata = {
   title: "Ismail's Portfolio",
@@ -22,6 +23,7 @@ export default function RootLayout({
           <Suspense fallback={<Loading />}>{children}</Suspense>
         </StoreProvider>
       </body>
+      <GoogleAnalytics gaId="G-TED0MEJN8P" />
     </html>
   );
 }

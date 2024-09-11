@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* //for google analytics
+//npm i @next/third-parties@latest next@latest */
+
 @font-face {
     font-family: "Mantinia-Regular";
     src: url("/fonts/Mantinia-Regular.otf") format("opentype");
